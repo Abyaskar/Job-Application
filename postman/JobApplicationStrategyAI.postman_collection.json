@@ -1,0 +1,317 @@
+{
+  "info": {
+    "name": "Job Application Strategy AI",
+    "description": "REST API for the intent-aware Job Application Strategy AI platform: normalizes a candidate's free-text career intent (Career Intent Layer), ranks job descriptions against a resume with hybrid semantic + rule-based + intent-gated scoring (Strategy Ranking Layer), and explains each recommendation with grounded RAG evidence including Why Apply / Why Not Apply sections.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "candidate_id",
+      "value": "cand_pivot_analyst_01",
+      "description": "Defaults to the intent-vs-similarity demo candidate (data-analyst resume, GenAI Engineer intent) \u2014 see README Evaluation section."
+    },
+    {
+      "key": "job_id",
+      "value": "job_012"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Liveness",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/health"
+          }
+        },
+        {
+          "name": "Readiness",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/health/ready"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Candidates",
+      "item": [
+        {
+          "name": "Ingest resume",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/v1/candidates/resume",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"candidate_id\": \"{{candidate_id}}\",\n  \"raw_text\": \"MSc Data Science graduate with 1.5 years of experience. Built a recommendation system using FastAPI, MongoDB, Redis, and vector search over embeddings. Strong Python, pandas, and scikit-learn. RAG prototype for university capstone. Bachelor's and Master's degree in Computer Science / Data Science.\",\n  \"preferred_locations\": [\"Remote\", \"London\"],\n  \"preferred_domains\": [\"ai_platform\", \"e-commerce\"]\n}"
+            }
+          }
+        },
+        {
+          "name": "Get resume",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/candidates/{{candidate_id}}/resume"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Career Intent",
+      "item": [
+        {
+          "name": "Submit career intent",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/v1/intent",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"candidate_id\": \"{{candidate_id}}\",\n  \"free_text\": \"GenAI Engineer\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Preview intent normalization (no persistence)",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/intent/preview?text=I want to move into data analytics"
+          }
+        },
+        {
+          "name": "Get candidate's active intent",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/intent/{{candidate_id}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Jobs",
+      "item": [
+        {
+          "name": "Ingest job",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/v1/jobs",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"job_id\": \"job_999\",\n  \"title\": \"AI Engineer\",\n  \"company\": \"Example Corp\",\n  \"location\": \"Remote\",\n  \"domain\": \"ai_platform\",\n  \"raw_description\": \"Required: 2+ years experience, Python, FastAPI, MongoDB, RAG, and vector search. Bachelor's degree required.\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Bulk ingest jobs",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/v1/jobs/bulk",
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"job_id\": \"job_998\",\n    \"title\": \"Backend Engineer\",\n    \"company\": \"Example Corp\",\n    \"location\": \"Berlin\",\n    \"domain\": \"infrastructure\",\n    \"raw_description\": \"Required: 3+ years experience, Python, MongoDB, Redis, distributed systems. Master's degree preferred.\"\n  }\n]"
+            }
+          }
+        },
+        {
+          "name": "Reindex vector index",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/api/v1/jobs/reindex"
+          }
+        },
+        {
+          "name": "Get job",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/jobs/{{job_id}}"
+          }
+        },
+        {
+          "name": "List jobs",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/jobs?limit=100"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Recommendations",
+      "item": [
+        {
+          "name": "Rank jobs (hybrid, intent-aware)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/v1/recommendations/rank",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"candidate_id\": \"{{candidate_id}}\",\n  \"top_k\": 10,\n  \"mode\": \"hybrid\",\n  \"use_intent\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Rank jobs (hybrid, intent disabled)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/v1/recommendations/rank",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"candidate_id\": \"{{candidate_id}}\",\n  \"top_k\": 10,\n  \"mode\": \"hybrid\",\n  \"use_intent\": false\n}"
+            }
+          }
+        },
+        {
+          "name": "Rank jobs (with filters)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/v1/recommendations/rank",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"candidate_id\": \"{{candidate_id}}\",\n  \"top_k\": 10,\n  \"mode\": \"hybrid\",\n  \"location_filter\": \"Remote\",\n  \"domain_filter\": \"ai_platform\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Compare keyword vs vector vs hybrid",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/v1/recommendations/compare",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"candidate_id\": \"{{candidate_id}}\",\n  \"top_k\": 5\n}"
+            }
+          }
+        },
+        {
+          "name": "Get all recommendations for candidate",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/recommendations/{{candidate_id}}"
+          }
+        },
+        {
+          "name": "Get recommendation detail",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/recommendations/{{candidate_id}}/{{job_id}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Feedback",
+      "item": [
+        {
+          "name": "Submit feedback",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": "{{base_url}}/api/v1/feedback",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"candidate_id\": \"{{candidate_id}}\",\n  \"job_id\": \"{{job_id}}\",\n  \"accepted\": true,\n  \"applied\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Get feedback history",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/feedback/{{candidate_id}}"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Evaluation",
+      "item": [
+        {
+          "name": "Run labeled eval set (Precision/Recall/NDCG)",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/evaluation/run?top_k=5&use_intent=true"
+          }
+        },
+        {
+          "name": "Intent impact (with vs without intent)",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/evaluation/intent-impact?top_k=5"
+          }
+        },
+        {
+          "name": "Cache stats",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/evaluation/cache-stats"
+          }
+        },
+        {
+          "name": "Evaluation summary",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/v1/evaluation/summary"
+          }
+        }
+      ]
+    }
+  ]
+}

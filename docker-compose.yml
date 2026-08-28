@@ -1,0 +1,77 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    ports:
+      - "8000:8080"
+    environment:
+      - ENV=production
+      - DEBUG=false
+      - DEMO_MODE=false
+      - SEED_DEMO_DATA=true
+      - MONGO_URI=mongodb://mongo:27017
+      - MONGO_DB_NAME=job_strategy_ai
+      - REDIS_URL=redis://redis:6379/0
+      - CORS_ORIGINS=["http://localhost:3000"]
+      - PORT=8080
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8080/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Baked into the client bundle only if referenced directly in
+        # client code (it isn't here — the browser always calls the
+        # same-origin /api/backend/* rewrite). This arg is kept for parity
+        # in case a future page reads it client-side.
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Read server-side by next.config.js's rewrites() to proxy
+      # /api/backend/* -> this URL. Must be the *container-network* address
+      # of the backend service, not localhost, since the rewrite executes
+      # inside the frontend container.
+      - NEXT_PUBLIC_API_URL=http://backend:8080
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:

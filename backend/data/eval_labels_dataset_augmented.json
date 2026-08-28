@@ -1,0 +1,111 @@
+{
+  "methodology": "Cases derived from the 'Resume Data for Ranking' Kaggle dataset (SYNTHETIC fallback \u2014 see data/external/README.md). Relevance here comes from the dataset's own match_label column, a different methodology from data/eval_labels.json's hand-authored judgments \u2014 kept in a separate file rather than merged so the two label sources are never silently conflated into one metric. These cases reference resume text and job TITLES directly (not this project's internal candidate_id/job_id), since they weren't ingested into the running system's store \u2014 a harness wanting to evaluate against them would first POST each resume_text to /candidates/resume and match job titles to ingested job_ids.",
+  "is_synthetic": true,
+  "cases": [
+    {
+      "synthetic_candidate_id": "dataset_cand_000",
+      "resume_text": "MSc Data Science graduate with 1.5 years of combined internship and academic project experience. Built a recommendation system for an e-commerce dataset using collaborative filtering and vector search over product embeddings, deployed as a FastAPI async REST API backed by MongoDB and Redis caching. Strong Python skills including pandas, numpy, and scikit-learn. Coursework and personal projects covering machine learning, deep learning with PyTorch, and natural language processing. Built a retrieval augmented generation (RAG) prototype over a document corpus for a university capstone project, including embeddings and semantic search. Comfortable with Docker for containerization and basic Git/CI-CD workflows. Bachelor's degree in Computer Science, Master's degree (MSc) in Data Science in progress/completed. Familiar with system design fundamentals and REST API design. Some exposure to GCP through university cloud credits.",
+      "relevant_job_titles": [
+        "Machine Learning Engineer, Recommendations",
+        "Data Scientist Intern",
+        "Senior Backend Engineer, Search Infrastructure",
+        "AI Engineer - Generative AI Platform",
+        "Junior Frontend Engineer",
+        "Data Engineer",
+        "Applied Scientist - NLP",
+        "Software Engineering Intern - Platform",
+        "Full-Stack Engineer, AI Products",
+        "Data Analyst",
+        "MLOps Engineer",
+        "Graduate Software Engineer - Search & Ranking"
+      ]
+    },
+    {
+      "synthetic_candidate_id": "dataset_cand_001",
+      "resume_text": "Frontend developer with 1 year of experience building React and Next.js applications with TypeScript and Tailwind CSS. Built several personal projects consuming REST APIs. Familiar with Git and basic CI/CD pipelines. Bachelor's degree in Computer Science. Limited backend experience; some exposure to Node.js. No formal experience with machine learning, Python, or databases like MongoDB.",
+      "relevant_job_titles": [
+        "Machine Learning Engineer, Recommendations",
+        "Data Scientist Intern",
+        "Senior Backend Engineer, Search Infrastructure",
+        "Junior Frontend Engineer",
+        "Data Engineer",
+        "Graduate Software Engineer - Search & Ranking"
+      ]
+    },
+    {
+      "synthetic_candidate_id": "dataset_cand_002",
+      "resume_text": "Senior backend engineer with 6 years of professional experience building distributed systems and microservices. Deep expertise in system design, Kafka, Redis, and MongoDB at scale, handling millions of requests per day. Experience building high-throughput REST APIs in Python and Java. Led migration of a monolith to microservices deployed on GCP using Docker and Kubernetes. Some exposure to vector search and semantic search from a recent internal project. Master's degree in Computer Science. Comfortable mentoring junior engineers and leading system design reviews.",
+      "relevant_job_titles": [
+        "Machine Learning Engineer, Recommendations",
+        "Senior Backend Engineer, Search Infrastructure",
+        "AI Engineer - Generative AI Platform",
+        "Junior Frontend Engineer",
+        "Data Engineer",
+        "Applied Scientist - NLP",
+        "Software Engineering Intern - Platform",
+        "Full-Stack Engineer, AI Products",
+        "MLOps Engineer",
+        "Graduate Software Engineer - Search & Ranking"
+      ]
+    },
+    {
+      "synthetic_candidate_id": "dataset_cand_003",
+      "resume_text": "PhD candidate in Computational Linguistics with 4 years of applied NLP research experience. Extensive experience with PyTorch, TensorFlow, and large language models (LLMs), including fine-tuning transformer architectures for downstream NLP tasks. Published research involving embeddings, semantic search, and retrieval augmented generation (RAG) pipelines. Strong Python skills and experience with statistics and hypothesis testing. Limited experience with production software engineering practices such as Docker, MongoDB, or REST API deployment, though comfortable learning quickly.",
+      "relevant_job_titles": [
+        "Senior Backend Engineer, Search Infrastructure",
+        "AI Engineer - Generative AI Platform",
+        "Data Engineer",
+        "Applied Scientist - NLP",
+        "Graduate Software Engineer - Search & Ranking"
+      ]
+    },
+    {
+      "synthetic_candidate_id": "dataset_cand_004",
+      "resume_text": "Data analyst with 2 years of experience in healthcare reporting. Strong SQL skills and experience building dashboards in Tableau and Power BI. Working knowledge of Python for basic data analysis with pandas. Some exposure to statistics coursework. No experience with machine learning frameworks, MongoDB, or software engineering practices such as REST APIs or Docker. Bachelor's degree in Public Health with a minor in Statistics.",
+      "relevant_job_titles": [
+        "Machine Learning Engineer, Recommendations",
+        "Data Scientist Intern",
+        "Senior Backend Engineer, Search Infrastructure",
+        "AI Engineer - Generative AI Platform",
+        "Junior Frontend Engineer",
+        "Data Engineer",
+        "Applied Scientist - NLP",
+        "Software Engineering Intern - Platform",
+        "Full-Stack Engineer, AI Products",
+        "Data Analyst",
+        "MLOps Engineer",
+        "Graduate Software Engineer - Search & Ranking"
+      ]
+    },
+    {
+      "synthetic_candidate_id": "dataset_cand_005",
+      "resume_text": "Recent Bachelor's graduate in Computer Science with strong academic performance and two internships totaling 8 months of experience. Internship experience includes building REST APIs with Python and basic exposure to FastAPI and MongoDB during a capstone project. Coursework covered machine learning fundamentals, algorithms, and system design basics. Built a small recommendation engine project using simple vector similarity for a class assignment. Comfortable with Git and eager to grow into a backend or ML engineering role. No professional experience with Docker, Kubernetes, or cloud platforms yet, though completed an introductory GCP course.",
+      "relevant_job_titles": [
+        "Machine Learning Engineer, Recommendations",
+        "Data Scientist Intern",
+        "Senior Backend Engineer, Search Infrastructure",
+        "AI Engineer - Generative AI Platform",
+        "Junior Frontend Engineer",
+        "Data Engineer",
+        "Applied Scientist - NLP",
+        "Software Engineering Intern - Platform",
+        "Full-Stack Engineer, AI Products",
+        "Data Analyst",
+        "MLOps Engineer",
+        "Graduate Software Engineer - Search & Ranking"
+      ]
+    },
+    {
+      "synthetic_candidate_id": "dataset_cand_006",
+      "resume_text": "Data analyst with 2 years of experience in healthcare reporting. Strong SQL skills and experience building dashboards in Tableau and Power BI. Working knowledge of Python for basic data analysis with pandas. Actively studying generative AI technologies on the side and aiming to transition into an AI engineering career path. Bachelor's degree in Statistics.",
+      "relevant_job_titles": [
+        "Data Scientist Intern",
+        "AI Engineer - Generative AI Platform",
+        "Data Engineer",
+        "Applied Scientist - NLP",
+        "Full-Stack Engineer, AI Products",
+        "Data Analyst"
+      ]
+    }
+  ]
+}

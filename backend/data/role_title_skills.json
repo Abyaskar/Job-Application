@@ -1,0 +1,248 @@
+{
+  "AI Engineer": [
+    "fastapi",
+    "llm",
+    "machine_learning",
+    "nlp",
+    "prompt_engineering",
+    "python",
+    "rag",
+    "vector_search"
+  ],
+  "AI Engineer - Generative AI Platform": [
+    "machine_learning",
+    "mlops",
+    "python",
+    "pytorch",
+    "recommendation_systems",
+    "scikit_learn",
+    "tensorflow"
+  ],
+  "Applied Scientist - NLP": [
+    "data_visualization",
+    "deep_learning",
+    "fastapi",
+    "llm",
+    "machine_learning",
+    "mlops",
+    "nlp",
+    "numpy",
+    "pandas",
+    "prompt_engineering",
+    "python",
+    "pytorch",
+    "rag",
+    "recommendation_systems",
+    "scikit_learn",
+    "statistics",
+    "tensorflow",
+    "vector_search"
+  ],
+  "Backend Engineer": [
+    "fastapi",
+    "microservices",
+    "mongodb",
+    "python",
+    "redis",
+    "rest_api",
+    "system_design"
+  ],
+  "Business Analyst": [
+    "business_analysis",
+    "data_visualization",
+    "excel",
+    "requirements_gathering",
+    "sql",
+    "stakeholder_management"
+  ],
+  "Data Analyst": [
+    "business_analysis",
+    "data_visualization",
+    "excel",
+    "python",
+    "requirements_gathering",
+    "sql",
+    "stakeholder_management",
+    "statistics"
+  ],
+  "Data Engineer": [
+    "airflow",
+    "aws",
+    "gcp",
+    "kafka",
+    "python",
+    "spark",
+    "sql"
+  ],
+  "Data Scientist": [
+    "data_visualization",
+    "machine_learning",
+    "numpy",
+    "pandas",
+    "python",
+    "statistics"
+  ],
+  "Data Scientist Intern": [
+    "data_visualization",
+    "excel",
+    "machine_learning",
+    "numpy",
+    "pandas",
+    "python",
+    "sql",
+    "statistics"
+  ],
+  "Frontend Engineer": [
+    "javascript",
+    "nextjs",
+    "react",
+    "rest_api",
+    "typescript"
+  ],
+  "Full-Stack Engineer, AI Products": [
+    "fastapi",
+    "javascript",
+    "llm",
+    "machine_learning",
+    "nextjs",
+    "nlp",
+    "prompt_engineering",
+    "python",
+    "rag",
+    "react",
+    "rest_api",
+    "typescript",
+    "vector_search"
+  ],
+  "GenAI Engineer": [
+    "fastapi",
+    "llm",
+    "machine_learning",
+    "nlp",
+    "prompt_engineering",
+    "python",
+    "rag",
+    "vector_search"
+  ],
+  "Graduate Software Engineer - Search & Ranking": [
+    "data_visualization",
+    "git",
+    "java",
+    "javascript",
+    "machine_learning",
+    "numpy",
+    "pandas",
+    "python",
+    "rest_api",
+    "statistics",
+    "testing"
+  ],
+  "Junior Frontend Engineer": [
+    "javascript",
+    "nextjs",
+    "react",
+    "rest_api",
+    "typescript"
+  ],
+  "ML Engineer": [
+    "machine_learning",
+    "mlops",
+    "python",
+    "pytorch",
+    "recommendation_systems",
+    "scikit_learn",
+    "tensorflow"
+  ],
+  "MLOps Engineer": [
+    "airflow",
+    "aws",
+    "ci_cd",
+    "docker",
+    "gcp",
+    "kafka",
+    "kubernetes",
+    "machine_learning",
+    "mlops",
+    "mongodb",
+    "python",
+    "pytorch",
+    "recommendation_systems",
+    "scikit_learn",
+    "spark",
+    "sql",
+    "tensorflow"
+  ],
+  "Machine Learning Engineer": [
+    "fastapi",
+    "llm",
+    "machine_learning",
+    "nlp",
+    "prompt_engineering",
+    "python",
+    "rag",
+    "vector_search"
+  ],
+  "Machine Learning Engineer, Recommendations": [
+    "machine_learning",
+    "mlops",
+    "python",
+    "pytorch",
+    "recommendation_systems",
+    "scikit_learn",
+    "tensorflow"
+  ],
+  "NLP Engineer": [
+    "fastapi",
+    "llm",
+    "machine_learning",
+    "nlp",
+    "prompt_engineering",
+    "python",
+    "rag",
+    "vector_search"
+  ],
+  "NLP Research Scientist": [
+    "deep_learning",
+    "llm",
+    "nlp",
+    "pytorch",
+    "statistics",
+    "tensorflow"
+  ],
+  "Senior Backend Engineer, Search Infrastructure": [
+    "aws",
+    "ci_cd",
+    "docker",
+    "fastapi",
+    "gcp",
+    "kubernetes",
+    "machine_learning",
+    "microservices",
+    "mongodb",
+    "python",
+    "redis",
+    "rest_api",
+    "system_design"
+  ],
+  "Software Engineer": [
+    "git",
+    "java",
+    "javascript",
+    "python",
+    "rest_api",
+    "testing"
+  ],
+  "Software Engineering Intern - Platform": [
+    "fastapi",
+    "git",
+    "java",
+    "javascript",
+    "microservices",
+    "mongodb",
+    "python",
+    "redis",
+    "rest_api",
+    "system_design",
+    "testing"
+  ]
+}

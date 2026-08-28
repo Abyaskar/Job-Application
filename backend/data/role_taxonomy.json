@@ -1,0 +1,88 @@
+{
+  "genai_engineer": {
+    "canonical_title": "GenAI Engineer",
+    "aliases": [
+      "genai engineer", "gen ai engineer", "generative ai engineer", "llm engineer",
+      "ai engineer", "applied ai engineer", "rag engineer", "prompt engineer"
+    ],
+    "related_titles": [
+      "AI Engineer", "Machine Learning Engineer", "NLP Engineer", "Applied Scientist - NLP",
+      "Full-Stack Engineer, AI Products"
+    ],
+    "core_skills": ["llm", "rag", "vector_search", "prompt_engineering", "python", "fastapi", "nlp", "machine_learning"],
+    "keywords": ["generative ai", "large language model", "retrieval augmented generation", "embeddings", "chatbot", "copilot"]
+  },
+  "ml_engineer": {
+    "canonical_title": "ML Engineer",
+    "aliases": ["ml engineer", "machine learning engineer", "applied ml engineer", "mle"],
+    "related_titles": [
+      "Machine Learning Engineer, Recommendations", "MLOps Engineer", "Applied Scientist - NLP",
+      "AI Engineer - Generative AI Platform"
+    ],
+    "core_skills": ["machine_learning", "python", "pytorch", "tensorflow", "scikit_learn", "recommendation_systems", "mlops" ],
+    "keywords": ["model training", "feature engineering", "model deployment", "ml pipeline"]
+  },
+  "data_scientist": {
+    "canonical_title": "Data Scientist",
+    "aliases": ["data scientist", "applied scientist", "research scientist", "data science"],
+    "related_titles": ["Data Scientist Intern", "Applied Scientist - NLP", "Graduate Software Engineer - Search & Ranking"],
+    "core_skills": ["python", "statistics", "machine_learning", "pandas", "numpy", "data_visualization"],
+    "keywords": ["hypothesis testing", "experimentation", "a/b testing", "modeling", "insights"]
+  },
+  "data_analyst": {
+    "canonical_title": "Data Analyst",
+    "aliases": ["data analyst", "business intelligence analyst", "bi analyst", "reporting analyst", "analytics analyst"],
+    "related_titles": ["Data Analyst", "Data Scientist Intern"],
+    "core_skills": ["sql", "excel", "data_visualization", "statistics", "python"],
+    "keywords": ["dashboard", "reporting", "kpi", "business intelligence", "tableau", "power bi"]
+  },
+  "business_analyst": {
+    "canonical_title": "Business Analyst",
+    "aliases": ["business analyst", "ba", "product analyst", "operations analyst", "process analyst"],
+    "related_titles": ["Data Analyst", "Business Analyst"],
+    "core_skills": ["business_analysis", "sql", "excel", "stakeholder_management", "requirements_gathering", "data_visualization"],
+    "keywords": ["requirements", "stakeholders", "process improvement", "documentation", "agile", "jira"]
+  },
+  "backend_engineer": {
+    "canonical_title": "Backend Engineer",
+    "aliases": ["backend engineer", "backend developer", "server-side engineer", "api engineer"],
+    "related_titles": ["Senior Backend Engineer, Search Infrastructure", "Software Engineering Intern - Platform"],
+    "core_skills": ["python", "fastapi", "rest_api", "mongodb", "redis", "system_design", "microservices"],
+    "keywords": ["distributed systems", "api design", "scalability", "throughput"]
+  },
+  "frontend_engineer": {
+    "canonical_title": "Frontend Engineer",
+    "aliases": ["frontend engineer", "frontend developer", "ui engineer", "react developer"],
+    "related_titles": ["Junior Frontend Engineer", "Full-Stack Engineer, AI Products"],
+    "core_skills": ["javascript", "typescript", "react", "nextjs", "rest_api"],
+    "keywords": ["ui", "ux", "component", "responsive design"]
+  },
+  "data_engineer": {
+    "canonical_title": "Data Engineer",
+    "aliases": ["data engineer", "etl engineer", "pipeline engineer", "big data engineer"],
+    "related_titles": ["Data Engineer", "MLOps Engineer"],
+    "core_skills": ["python", "sql", "spark", "airflow", "kafka", "gcp", "aws"],
+    "keywords": ["etl", "data pipeline", "warehouse", "batch processing", "streaming"]
+  },
+  "mlops_engineer": {
+    "canonical_title": "MLOps Engineer",
+    "aliases": ["mlops engineer", "ml infrastructure engineer", "ml platform engineer"],
+    "related_titles": ["MLOps Engineer", "Senior Backend Engineer, Search Infrastructure"],
+    "core_skills": ["docker", "kubernetes", "ci_cd", "gcp", "aws", "mongodb", "machine_learning"],
+    "keywords": ["model deployment", "monitoring", "observability", "infrastructure as code"]
+  },
+  "nlp_researcher": {
+    "canonical_title": "NLP Research Scientist",
+    "aliases": ["nlp researcher", "nlp scientist", "computational linguist", "research scientist nlp"],
+    "related_titles": ["Applied Scientist - NLP"],
+    "core_skills": ["nlp", "deep_learning", "pytorch", "tensorflow", "llm", "statistics"],
+    "keywords": ["publication", "transformer", "fine-tuning", "language model"]
+  },
+  "software_engineer": {
+    "canonical_title": "Software Engineer",
+    "aliases": ["software engineer", "swe", "developer", "programmer", "full stack engineer", "full-stack engineer"],
+    "related_titles": ["Graduate Software Engineer - Search & Ranking", "Software Engineering Intern - Platform"],
+    "core_skills": ["python", "java", "javascript", "git", "rest_api", "testing"],
+    "keywords": ["software development", "coding", "engineering"]
+  }
+}
