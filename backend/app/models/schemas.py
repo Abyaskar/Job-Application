@@ -12,6 +12,85 @@ def utcnow() -> datetime:
 
 
 # ---------------------------------------------------------------------------
+# Document Intelligence / Validation
+# ---------------------------------------------------------------------------
+
+class DocumentValidationState(str, Enum):
+    """Explicit validation states for document processing."""
+    VALID_RESUME = "valid_resume"
+    RESUME_REQUIRES_OCR = "resume_requires_ocr"
+    LOW_EXTRACTION_QUALITY = "low_extraction_quality"
+    NOT_A_RESUME = "not_a_resume"
+    CORRUPTED_FILE = "corrupted_file"
+    UNSUPPORTED_DOCUMENT = "unsupported_document"
+    INSUFFICIENT_INFORMATION = "insufficient_information"
+    EXTRACTION_FAILED = "extraction_failed"
+
+
+class DocumentType(str, Enum):
+    """Detected document types."""
+    RESUME = "resume"
+    COVER_LETTER = "cover_letter"
+    JOB_DESCRIPTION = "job_description"
+    CERTIFICATE = "certificate"
+    MARKSHEET = "marksheet"
+    INVOICE = "invoice"
+    ID_DOCUMENT = "id_document"
+    PORTFOLIO = "portfolio"
+    UNKNOWN = "unknown"
+
+
+class DocumentValidationResult(BaseModel):
+    """Complete validation result with human-readable messages."""
+    state: DocumentValidationState
+    document_type: DocumentType
+    raw_text: str
+    file_type_detected: str
+    file_type_expected: str | None = None
+    extraction_quality_score: float
+    
+    # Human-readable messages
+    user_message: str
+    next_action: str
+    
+    # Technical details for debugging
+    technical_details: dict[str, Any] = Field(default_factory=dict)
+    
+    # Extracted metadata (only populated for valid resumes)
+    detected_name: str | None = None
+    detected_email: str | None = None
+    detected_phone: str | None = None
+    detected_location: str | None = None
+    detected_total_experience_years: float | None = None
+    detected_education_level: int | None = None
+    detected_skills_count: int = 0
+    detected_experience_entries: int = 0
+
+
+class ProcessingProgressStep(str, Enum):
+    """Steps in the document processing pipeline for UI visualization."""
+    FILE_UPLOADED = "file_uploaded"
+    TYPE_DETECTED = "type_detected"
+    CONTENT_EXTRACTED = "content_extracted"
+    RESUME_DETECTED = "resume_detected"
+    INFORMATION_IDENTIFIED = "information_identified"
+    SKILLS_IDENTIFIED = "skills_identified"
+    EXPERIENCE_IDENTIFIED = "experience_identified"
+    CAREER_DOMAIN_IDENTIFIED = "career_domain_identified"
+    PROCESSING_COMPLETE = "processing_complete"
+
+
+class ProcessingProgress(BaseModel):
+    """Real-time processing progress for UI display."""
+    current_step: ProcessingProgressStep
+    completed_steps: list[ProcessingProgressStep] = Field(default_factory=list)
+    is_complete: bool = False
+    has_error: bool = False
+    error_message: str | None = None
+    progress_percentage: float = 0.0
+
+
+# ---------------------------------------------------------------------------
 # Candidate / Resume
 # ---------------------------------------------------------------------------
 
@@ -29,17 +108,20 @@ class ExperienceEntry(BaseModel):
     description: str = ""
 
 
-class ResumeIn(BaseModel):
-    candidate_id: str
-    raw_text: str
-    preferred_locations: list[str] = Field(default_factory=list)
-    preferred_domains: list[str] = Field(default_factory=list)
-    min_salary: int | None = None
+class CareerDomain(BaseModel):
+    """Detected professional career domain."""
+    domain_id: str
+    domain_name: str
+    confidence: float
+    related_domains: list[str] = Field(default_factory=list)
 
 
-class ParsedResume(BaseModel):
+class ParsedResumeV2(BaseModel):
+    """Enhanced resume schema with V2 intelligence fields."""
     candidate_id: str
     raw_text: str
+    
+    # Original fields (backward compatible)
     skills: list[str] = Field(default_factory=list)
     education: list[EducationEntry] = Field(default_factory=list)
     experience: list[ExperienceEntry] = Field(default_factory=list)
@@ -48,6 +130,48 @@ class ParsedResume(BaseModel):
     preferred_domains: list[str] = Field(default_factory=list)
     embedding: list[float] = Field(default_factory=list)
     updated_at: datetime = Field(default_factory=utcnow)
+    
+    # V2 enhancements - Document validation
+    validation_state: DocumentValidationState = DocumentValidationState.VALID_RESUME
+    document_type: DocumentType = DocumentType.RESUME
+    extraction_quality_score: float = 1.0
+    
+    # V2 enhancements - Personal info extraction
+    detected_name: str | None = None
+    detected_email: str | None = None
+    detected_phone: str | None = None
+    
+    # V2 enhancements - Career intelligence
+    career_domains: list[CareerDomain] = Field(default_factory=list)
+    primary_domain: str | None = None
+    seniority_level: str | None = None  # entry, mid, senior, executive
+    
+    # V2 enhancements - Location preferences (more flexible)
+    current_location: str | None = None
+    preferred_countries: list[str] = Field(default_factory=list)
+    open_to_remote: bool = True
+    open_to_relocation: bool = False
+    
+    # V2 enhancements - Metadata
+    processing_metadata: dict[str, Any] = Field(default_factory=dict)
+    model_version: str = "v2.0.0"
+
+
+class ResumeIn(BaseModel):
+    candidate_id: str
+    raw_text: str
+    preferred_locations: list[str] = Field(default_factory=list)
+    preferred_domains: list[str] = Field(default_factory=list)
+    min_salary: int | None = None
+    # V2 additions
+    current_location: str | None = None
+    preferred_countries: list[str] = Field(default_factory=list)
+    open_to_remote: bool = True
+    open_to_relocation: bool = False
+
+
+# Alias for backward compatibility - existing code uses ParsedResume
+ParsedResume = ParsedResumeV2
 
 
 # ---------------------------------------------------------------------------
@@ -132,6 +256,13 @@ class RecommendedAction(str, Enum):
     LOW_PRIORITY = "low_priority"
 
 
+class EligibilityState(str, Enum):
+    """Eligibility determination for a job application."""
+    ELIGIBLE = "eligible"  # Candidate has sufficient evidence to apply
+    PARTIALLY_ELIGIBLE = "partially_eligible"  # Some gaps but may still apply with tailoring
+    NOT_ELIGIBLE = "not_eligible"  # Missing critical required skills
+
+
 class ScoreBreakdown(BaseModel):
     intent_alignment: float = 1.0
     semantic_similarity: float
@@ -144,6 +275,10 @@ class ScoreBreakdown(BaseModel):
     intent_gated: bool = Field(
         False, description="True if this job was hard-penalized for conflicting with stated career intent"
     )
+    # V2 eligibility fields - separate from ranking score
+    eligibility_state: EligibilityState = EligibilityState.ELIGIBLE
+    skill_coverage_ratio: float = 0.0
+    missing_critical_skills: list[str] = Field(default_factory=list)
 
 
 class SkillGap(BaseModel):

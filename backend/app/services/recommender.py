@@ -147,8 +147,23 @@ async def rank_jobs_for_candidate(
             breakdown, gap = score_candidate_job(resume, job, settings, mode=mode.value, intent=intent)
             scored.append((job, breakdown, gap))
 
-        scored.sort(key=lambda t: t[1].final_score, reverse=True)
-        top = scored[:top_k]
+        # V2: Separate eligible and ineligible jobs BEFORE ranking
+        # Eligible jobs are ranked normally; ineligible jobs are still tracked
+        # but separated to avoid presenting them as normal recommendations
+        eligible_jobs = [(j, b, g) for j, b, g in scored if b.eligibility_state == "eligible"]
+        partially_eligible_jobs = [(j, b, g) for j, b, g in scored if b.eligibility_state == "partially_eligible"]
+        not_eligible_jobs = [(j, b, g) for j, b, g in scored if b.eligibility_state == "not_eligible"]
+        
+        # Sort eligible jobs by final score for main recommendations
+        eligible_jobs.sort(key=lambda t: t[1].final_score, reverse=True)
+        
+        # For top_k results, prioritize eligible jobs first
+        # If not enough eligible jobs, fill with partially_eligible
+        top_eligible = eligible_jobs[:top_k]
+        remaining_slots = max(0, top_k - len(top_eligible))
+        top_partially = partially_eligible_jobs[:remaining_slots]
+        
+        top = top_eligible + top_partially
 
         recommendations: list[Recommendation] = []
         for job, breakdown, gap in top:

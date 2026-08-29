@@ -65,6 +65,22 @@ export interface ParsedResume {
   total_experience_years: number;
   preferred_locations: string[];
   preferred_domains: string[];
+  // V2 fields for document intelligence
+  validation_state?: string;
+  document_type?: string;
+  extraction_quality_score?: number;
+  detected_name?: string | null;
+  detected_email?: string | null;
+  detected_phone?: string | null;
+  current_location?: string | null;
+  career_domains?: { domain_id: string; domain_name: string; confidence: number; related_domains?: string[] }[];
+  primary_domain?: string | null;
+  seniority_level?: string | null;
+  preferred_countries?: string[];
+  open_to_remote?: boolean;
+  open_to_relocation?: boolean;
+  processing_metadata?: Record<string, any>;
+  model_version?: string;
 }
 
 export interface ExtractedRequirements {

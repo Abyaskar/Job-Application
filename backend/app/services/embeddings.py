@@ -132,6 +132,48 @@ def get_embedding_provider() -> EmbeddingProvider:
     return _provider
 
 
+def embed_text(text: str) -> list[float]:
+    """Convenience function to embed a single text string.
+    
+    Uses the configured embedding provider (local TF-IDF by default,
+    or external API in production).
+    
+    Args:
+        text: The text to embed
+        
+    Returns:
+        Dense vector as list of floats
+    """
+    provider = get_embedding_provider()
+    return provider.embed(text)
+
+
+def embed_texts_batch(texts: list[str]) -> list[list[float]]:
+    """Embed multiple texts efficiently.
+    
+    Args:
+        texts: List of texts to embed
+        
+    Returns:
+        List of dense vectors
+    """
+    provider = get_embedding_provider()
+    return provider.embed_batch(texts)
+
+
+def fit_embeddings(corpus: list[str]) -> None:
+    """Fit the embedding model on a corpus.
+    
+    For local TF-IDF embeddings, this fits the vectorizer and SVD.
+    For external APIs, this is a no-op.
+    
+    Args:
+        corpus: List of documents to fit on
+    """
+    provider = get_embedding_provider()
+    provider.fit(corpus)
+
+
 def cosine_similarity(a: list[float], b: list[float]) -> float:
     va, vb = np.array(a), np.array(b)
     if not va.any() or not vb.any():

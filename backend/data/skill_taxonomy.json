@@ -36,6 +36,72 @@
     ],
     "category": "cloud"
   },
+  "accounting": {
+    "aliases": [
+      "accounting",
+      "accounts",
+      "bookkeeping",
+      "general ledger"
+    ],
+    "category": "finance"
+  },
+  "gst_compliance": {
+    "aliases": [
+      "gst",
+      "gst compliance",
+      "gst returns",
+      "gstr-1",
+      "gstr-3b",
+      "gstr-2b",
+      "gst registration",
+      "e-way bill",
+      "e-invoice"
+    ],
+    "category": "finance"
+  },
+  "tally": {
+    "aliases": [
+      "tally",
+      "tally prime",
+      "tally erp"
+    ],
+    "category": "finance_tool"
+  },
+  "bank_reconciliation": {
+    "aliases": [
+      "bank reconciliation",
+      "bank audit",
+      "bank statement verification",
+      "reconciliation"
+    ],
+    "category": "finance"
+  },
+  "voucher_verification": {
+    "aliases": [
+      "voucher verification",
+      "voucher entry",
+      "journal entries"
+    ],
+    "category": "finance"
+  },
+  "ledger_management": {
+    "aliases": [
+      "ledger",
+      "ledger maintenance",
+      "accounts receivable",
+      "accounts payable"
+    ],
+    "category": "finance"
+  },
+  "audit_support": {
+    "aliases": [
+      "audit support",
+      "audit working papers",
+      "statutory audit",
+      "tax audit"
+    ],
+    "category": "finance"
+  },
   "business_analysis": {
     "aliases": [
       "business analysis",

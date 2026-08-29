@@ -40,5 +40,11 @@
     "preferred_locations": ["Remote"],
     "preferred_domains": ["ai_platform", "healthtech"],
     "raw_text": "Data analyst with 2 years of experience in healthcare reporting. Strong SQL skills and experience building dashboards in Tableau and Power BI. Working knowledge of Python for basic data analysis with pandas. Actively studying generative AI technologies on the side and aiming to transition into an AI engineering career path. Bachelor's degree in Statistics."
+  },
+  {
+    "candidate_id": "cand_accountant_ashutosh",
+    "preferred_locations": ["Mumbai", "Remote"],
+    "preferred_domains": ["finance", "accounting"],
+    "raw_text": "Ashutosh Dhanajirao Renushe - Accountant | Accounts & GST. B.Com (Bachelor of Commerce) from Prahladrai Dalmia Lions College, 2026. Experience: Accountant at Ramesh Kundar, CA Firm (July 2025 – June 2026). Skills: Bookkeeping, day-to-day accounting, Tally Prime, GST compliance (GSTR-1, GSTR-3B, GSTR-2B reconciliation), GST registration support, E-way bills, E-invoices, Bank audit support, Bank statement verification, Voucher verification, Reconciliation, Cash-related records, Interest calculations, Audit working papers, Excel-based accounting (Filters, Sorting, SUM/SUMIF, COUNTIF, VLOOKUP/XLOOKUP, Pivot Tables, Conditional formatting), Basic data cleaning, Documentation and reporting. Core competencies: Accounting & Bookkeeping, Tally Prime, Tally, GST Compliance, GST Registration Support, E-Way Bill, E-Invoice, Bank Audit Support, Bank Reconciliation, Voucher Verification, Ledger & Record Maintenance, MS Excel, Pivot Tables, SUMIF/COUNTIF, VLOOKUP/XLOOKUP, Conditional Formatting, Data Cleaning, Documentation & Reporting."
   }
 ]

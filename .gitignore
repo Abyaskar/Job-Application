@@ -1,21 +1,64 @@
+```
+# Dependencies
+backend/venv/
+backend/.venv/
+frontend/node_modules/
+
 # Python
 __pycache__/
 *.pyc
-.venv/
-.pytest_cache/
-*.egg-info/
+*.pyo
+*.pyd
+backend/__pycache__/
+backend/**/*.pyc
+backend/**/*.pyo
+backend/**/*.pyd
 
-# Node / Next.js
-node_modules/
+# Build artifacts
+backend/dist/
+backend/build/
+frontend/dist/
+frontend/build/
+backend/target/
+frontend/.next/
 .next/
-out/
-
-# Env
-.env
-.env.local
-
-# OS
-.DS_Store
 
 # Logs
 *.log
+backend/*.log
+frontend/*.log
+
+# Environment variables
+.env
+.env.local
+.env.*
+backend/.env
+frontend/.env
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Cache directories
+.mypy_cache/
+.pytest_cache/
+.backend/.pytest_cache/
+frontend/.cache/
+.cache/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Testing
+tests/__pycache__/
+backend/tests/__pycache__/
+```

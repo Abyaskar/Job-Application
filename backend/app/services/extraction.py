@@ -14,11 +14,12 @@ from __future__ import annotations
 import re
 
 from app.models.schemas import (
+    CareerDomain,
     EducationEntry,
     ExperienceEntry,
     ExtractedRequirements,
 )
-from app.services.taxonomy import extract_skills
+from app.services.taxonomy import extract_skills, load_role_taxonomy
 
 EXPERIENCE_PATTERNS = [
     re.compile(r"(\d+(?:\.\d+)?)\+?\s*(?:years?|yrs?)\s+(?:of\s+)?experience", re.I),
@@ -94,9 +95,19 @@ def _infer_seniority(text: str) -> str | None:
 
 
 def extract_resume_profile(raw_text: str) -> dict:
-    """Returns a dict compatible with ParsedResume's extra fields."""
+    """Returns a dict compatible with ParsedResume's extra fields.
+    
+    V2 enhancements:
+    - Career domain detection for domain-agnostic support
+    - Seniority level inference
+    - Improved experience year calculation from date ranges
+    """
     skills = extract_skills(raw_text)
     years = _extract_years_experience(raw_text)
+    
+    # Detect career domains (V2 feature)
+    career_domains = detect_career_domain(raw_text)
+    primary_domain = career_domains[0].domain_id if career_domains else None
 
     education = []
     edu_level = _max_education_level(raw_text)
@@ -110,7 +121,7 @@ def extract_resume_profile(raw_text: str) -> dict:
     experience = []
     for line in raw_text.split("\n"):
         line = line.strip()
-        if 5 < len(line) < 80 and re.search(r"\b(engineer|scientist|analyst|developer|intern|manager)\b", line, re.I):
+        if 5 < len(line) < 80 and re.search(r"\b(engineer|scientist|analyst|developer|intern|manager|accountant|executive|consultant)\b", line, re.I):
             experience.append(ExperienceEntry(title=line, years=0.0))
 
     return {
@@ -118,4 +129,51 @@ def extract_resume_profile(raw_text: str) -> dict:
         "education": education,
         "experience": experience[:10],
         "total_experience_years": years,
+        "career_domains": [d.model_dump() for d in career_domains],
+        "primary_domain": primary_domain,
+        "seniority_level": _infer_seniority(raw_text),
     }
+
+
+def detect_career_domain(text: str) -> list[CareerDomain]:
+    """Detect professional career domains from resume text.
+    
+    Uses role taxonomy matching to identify candidate's professional domain
+    with confidence scores based on keyword and skill overlap.
+    """
+    role_taxonomy = load_role_taxonomy()
+    text_lower = text.lower()
+    
+    detected_domains = []
+    
+    for role_id, role_data in role_taxonomy.items():
+        # Count keyword matches
+        keyword_matches = sum(1 for kw in role_data.get("keywords", []) if kw.lower() in text_lower)
+        
+        # Count skill matches
+        extracted = extract_skills(text)
+        core_skills = set(role_data.get("core_skills", []))
+        skill_matches = len(set(extracted) & core_skills)
+        
+        # Count title/alias matches
+        title_matches = sum(1 for alias in role_data.get("aliases", []) if alias.lower() in text_lower)
+        
+        # Calculate confidence score
+        total_signals = keyword_matches + skill_matches + title_matches * 2
+        if total_signals > 0:
+            confidence = min(1.0, total_signals / 10.0)  # Normalize to 0-1
+            
+            if confidence >= 0.2:  # Minimum threshold
+                related = [r for r in role_data.get("related_titles", [])[:3]]
+                
+                detected_domains.append(CareerDomain(
+                    domain_id=role_id,
+                    domain_name=role_data.get("canonical_title", role_id.replace("_", " ").title()),
+                    confidence=round(confidence, 2),
+                    related_titles=related,
+                ))
+    
+    # Sort by confidence descending
+    detected_domains.sort(key=lambda d: d.confidence, reverse=True)
+    
+    return detected_domains[:5]  # Return top 5 domains

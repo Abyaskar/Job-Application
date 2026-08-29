@@ -22,7 +22,7 @@ const SAMPLE_CANDIDATES = [
 ];
 
 export default function DashboardPage() {
-  const [candidateId, setCandidateId] = useState<string | null>(null);
+  const [candidateId, setCandidateId] = useState<string>("");
   const [mode, setMode] = useState<SearchMode>("hybrid");
   const [location, setLocation] = useState("");
   const [domain, setDomain] = useState("");
@@ -35,11 +35,11 @@ export default function DashboardPage() {
   const [useIntent, setUseIntent] = useState(true);
 
   useEffect(() => {
-  const params = new URLSearchParams(window.location.search);
-  const uploadedCandidateId = params.get("candidateId");
+    const params = new URLSearchParams(window.location.search);
+    const uploadedCandidateId = params.get("candidateId");
 
-  setCandidateId(uploadedCandidateId || SAMPLE_CANDIDATES[0].id);
-}, []);
+    setCandidateId(uploadedCandidateId || SAMPLE_CANDIDATES[0].id);
+  }, []);
 
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
@@ -79,15 +79,19 @@ export default function DashboardPage() {
 
   useEffect(() => {
     setIntent(null);
-    api
-      .getIntent(candidateId)
-      .then(setIntent)
-      .catch(() => setIntent(null));
+    if (candidateId) {
+      api
+        .getIntent(candidateId)
+        .then(setIntent)
+        .catch(() => setIntent(null));
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [candidateId]);
 
   useEffect(() => {
-    loadRecommendations();
+    if (candidateId) {
+      loadRecommendations();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [candidateId, mode, location, domain, useIntent, intent?.role_family]);
 
@@ -128,17 +132,6 @@ export default function DashboardPage() {
               education, and location.
             </p>
           </div>
-          <select
-            value={candidateId}
-            onChange={(e) => setCandidateId(e.target.value)}
-            className="rounded-xl border border-base-700 bg-base-900 px-3 py-2.5 text-sm text-base-200 focus:border-accent focus:outline-none sm:w-80"
-          >
-            {SAMPLE_CANDIDATES.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.label}
-              </option>
-            ))}
-          </select>
         </div>
 
         <div className="mb-6">

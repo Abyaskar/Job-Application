@@ -68,6 +68,10 @@ from app.services.intent import title_alignment_score
 INTENT_GATE_THRESHOLD = 0.2  # below this alignment, cap the final score regardless of other signals
 INTENT_GATE_CAP = 0.35  # the final-score ceiling applied to gated (off-intent) jobs
 
+# Eligibility thresholds - separate from ranking scores
+ELIGIBILITY_MIN_SKILL_COVERAGE = 0.5  # Minimum required skill coverage to be eligible (50%)
+ELIGIBILITY_SOFT_THRESHOLD = 0.3  # Below this, definitely not eligible unless other factors compensate
+
 
 def compute_hard_skill_match(
     candidate_skills: list[str], requirements: ExtractedRequirements
@@ -99,6 +103,43 @@ def compute_hard_skill_match(
         coverage_ratio=round(required_coverage, 4),
     )
     return round(score, 4), gap
+
+
+def determine_eligibility(
+    skill_gap: SkillGap,
+    required_skills_count: int,
+) -> tuple["EligibilityState", list[str]]:
+    """Determine if a candidate is eligible for a job based on required skill coverage.
+    
+    This is an EXPLICIT GATE that operates before ranking.
+    A high semantic score cannot override missing critical skills.
+    
+    Returns:
+        tuple of (eligibility_state, missing_critical_skills)
+    """
+    # If no required skills specified, assume eligible (let ranking decide)
+    if required_skills_count == 0:
+        from app.models.schemas import EligibilityState
+        return EligibilityState.ELIGIBLE, []
+    
+    coverage = skill_gap.coverage_ratio
+    missing_required = skill_gap.missing_required
+    
+    # NOT ELIGIBLE: Less than 30% of required skills
+    if coverage < ELIGIBILITY_SOFT_THRESHOLD:
+        from app.models.schemas import EligibilityState
+        return EligibilityState.NOT_ELIGIBLE, missing_required
+    
+    # PARTIALLY ELIGIBLE: 30-50% coverage - may apply with significant tailoring
+    if coverage < ELIGIBILITY_MIN_SKILL_COVERAGE:
+        from app.models.schemas import EligibilityState
+        # Critical missing skills are the first 2-3 most important missing ones
+        critical_missing = missing_required[:3] if len(missing_required) > 2 else missing_required
+        return EligibilityState.PARTIALLY_ELIGIBLE, critical_missing
+    
+    # ELIGIBLE: 50%+ coverage
+    from app.models.schemas import EligibilityState
+    return EligibilityState.ELIGIBLE, []
 
 
 def compute_experience_match(candidate_years: float, required_years: float) -> float:
@@ -185,6 +226,11 @@ def score_candidate_job(
     if gated:
         final = min(final, INTENT_GATE_CAP)
 
+    # V2 Eligibility Gate: Determine eligibility BEFORE applying ranking score
+    # This ensures a high semantic score cannot override missing critical skills
+    required_skills_count = len(job.requirements.required_skills)
+    eligibility_state, missing_critical = determine_eligibility(gap, required_skills_count)
+    
     breakdown = ScoreBreakdown(
         intent_alignment=round(intent_score, 4),
         semantic_similarity=round(semantic, 4),
@@ -195,6 +241,10 @@ def score_candidate_job(
         final_score=round(final, 4),
         weights=weights,
         intent_gated=gated,
+        # V2 eligibility fields
+        eligibility_state=eligibility_state,
+        skill_coverage_ratio=gap.coverage_ratio,
+        missing_critical_skills=missing_critical,
     )
     return breakdown, gap
 
@@ -203,15 +253,35 @@ def recommend_action(score: ScoreBreakdown, gap: SkillGap) -> RecommendedAction:
     """Decision thresholds — tuned qualitatively, see README "Failure modes"
     for why these are intentionally conservative and validated against
     feedback in `evaluation.py`.
+    
+    V2 UPDATE: Eligibility gate now takes precedence over ranking score.
+    A candidate who is NOT_ELIGIBLE cannot receive APPLY_NOW regardless of score.
     """
+    # V2: Eligibility gate takes absolute precedence
+    if score.eligibility_state == "not_eligible":
+        return RecommendedAction.BUILD_MISSING_EVIDENCE
+    
     if score.intent_gated:
         return RecommendedAction.LOW_PRIORITY
-    if score.final_score >= 0.75 and gap.coverage_ratio >= 0.8:
-        return RecommendedAction.APPLY_NOW
-    if score.final_score >= 0.55 and gap.coverage_ratio < 0.8 and len(gap.missing_required) <= 2:
-        return RecommendedAction.TAILOR_RESUME_FIRST
+    
+    # ELIGIBLE candidates with strong scores
+    if score.eligibility_state == "eligible":
+        if score.final_score >= 0.75 and gap.coverage_ratio >= 0.8:
+            return RecommendedAction.APPLY_NOW
+        if score.final_score >= 0.55 and gap.coverage_ratio < 0.8 and len(gap.missing_required) <= 2:
+            return RecommendedAction.TAILOR_RESUME_FIRST
+    
+    # PARTIALLY_ELIGIBLE candidates need to build skills or tailor heavily
+    if score.eligibility_state == "partially_eligible":
+        if len(gap.missing_required) > 2:
+            return RecommendedAction.BUILD_MISSING_EVIDENCE
+        if score.final_score >= 0.55:
+            return RecommendedAction.TAILOR_RESUME_FIRST
+    
+    # Fallback for low scores or many missing skills
     if score.final_score >= 0.4 and len(gap.missing_required) > 2:
         return RecommendedAction.BUILD_MISSING_EVIDENCE
+    
     return RecommendedAction.LOW_PRIORITY
 
 

@@ -1,11 +1,28 @@
 "use client";
-
 import { motion } from "framer-motion";
-import { MapPin, ArrowUpRight, TriangleAlert, Target } from "lucide-react";
+import {
+  MapPin,
+  ArrowUpRight,
+  TriangleAlert,
+  Target,
+  Linkedin,
+} from "lucide-react";
 import Link from "next/link";
 import { ActionBadge, UncertaintyBadge } from "./ActionBadge";
 import { ScoreRing } from "./ScoreRing";
 import type { Recommendation } from "@/lib/types";
+
+const buildLinkedInUrl = (role: string, location?: string) => {
+  const params = new URLSearchParams();
+
+  params.set("keywords", role);
+
+  if (location) {
+    params.set("location", location);
+  }
+
+  return `https://www.linkedin.com/jobs/search/?${params.toString()}`;
+};
 
 export function RankingCard({
   rec,
@@ -16,12 +33,21 @@ export function RankingCard({
   rank: number;
   candidateId: string;
 }) {
+  const linkedInUrl = buildLinkedInUrl(
+    rec.job_title,
+    rec.job_location
+  );
+
   return (
     <motion.div
       layout
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35, delay: Math.min(rank, 8) * 0.04, ease: "easeOut" }}
+      transition={{
+        duration: 0.35,
+        delay: Math.min(rank, 8) * 0.04,
+        ease: "easeOut",
+      }}
       whileHover={{ y: -2 }}
       className="card group relative overflow-hidden p-5 transition-colors hover:border-accent/40"
     >
@@ -30,26 +56,35 @@ export function RankingCard({
           <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-base-800 text-xs font-semibold text-base-300">
             {rank}
           </div>
+
           <div>
             <h3 className="text-base font-semibold text-base-100 group-hover:text-white">
               {rec.job_title}
             </h3>
+
             <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-base-400">
               <span>{rec.company}</span>
+
               <span className="flex items-center gap-1 text-base-500">
                 <MapPin className="h-3.5 w-3.5" />
                 {rec.job_location}
               </span>
             </div>
+
             <div className="mt-3 flex flex-wrap items-center gap-2">
               <ActionBadge action={rec.action} />
               <UncertaintyBadge uncertainty={rec.uncertainty} />
+
               {rec.score.intent_gated && (
-                <span className="pill border-signal-danger/30 bg-signal-danger/10 text-signal-danger" title="Deprioritized for conflicting with your stated career intent, not your resume content.">
+                <span
+                  className="pill border-signal-danger/30 bg-signal-danger/10 text-signal-danger"
+                  title="Deprioritized for conflicting with your stated career intent, not your resume content."
+                >
                   <Target className="h-3 w-3" />
                   Off intent
                 </span>
               )}
+
               {rec.skill_gap.missing_required.length > 0 && (
                 <span className="pill border-base-600 bg-base-800 text-base-300">
                   <TriangleAlert className="h-3 w-3" />
@@ -61,35 +96,66 @@ export function RankingCard({
           </div>
         </div>
 
-        <div className="flex shrink-0 items-center gap-4">
+        <div className="flex shrink-0 items-center gap-2">
           <ScoreRing value={rec.score.final_score} label="Match" />
+
           <Link
             href={`/recommendation/${rec.job_id}?candidate=${candidateId}`}
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-base-700 text-base-400 opacity-0 transition-all group-hover:opacity-100 hover:border-accent hover:text-accent"
+            title="View recommendation details"
           >
             <ArrowUpRight className="h-4 w-4" />
           </Link>
+
+          <a
+            href={linkedInUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-9 items-center gap-2 rounded-lg border border-base-700 px-3 text-sm font-medium text-base-300 opacity-0 transition-all group-hover:opacity-100 hover:border-accent hover:text-accent"
+            title={`Search ${rec.job_title} jobs on LinkedIn`}
+          >
+            <Linkedin className="h-4 w-4" />
+            <span className="hidden xl:inline">LinkedIn</span>
+          </a>
         </div>
       </div>
 
       <div className="mt-4 grid grid-cols-5 gap-2 border-t border-base-700/60 pt-4 text-[11px]">
         <MiniStat label="Intent" value={rec.score.intent_alignment} />
-        <MiniStat label="Semantic" value={rec.score.semantic_similarity} />
+        <MiniStat
+          label="Semantic"
+          value={rec.score.semantic_similarity}
+        />
         <MiniStat label="Skills" value={rec.score.hard_skill_match} />
-        <MiniStat label="Experience" value={rec.score.experience_match} />
-        <MiniStat label="Education" value={rec.score.education_match} />
+        <MiniStat
+          label="Experience"
+          value={rec.score.experience_match}
+        />
+        <MiniStat
+          label="Education"
+          value={rec.score.education_match}
+        />
       </div>
     </motion.div>
   );
 }
 
-function MiniStat({ label, value }: { label: string; value: number }) {
+function MiniStat({
+  label,
+  value,
+}: {
+  label: string;
+  value: number;
+}) {
   return (
     <div className="space-y-1">
       <div className="flex items-center justify-between text-base-500">
         <span>{label}</span>
-        <span className="tabular-nums text-base-300">{Math.round(value * 100)}</span>
+        <span className="tabular-nums text-base-300">
+          {Math.round(value * 100)}
+        </span>
       </div>
+
       <div className="h-1 overflow-hidden rounded-full bg-base-800">
         <motion.div
           className="h-full rounded-full bg-accent/70"

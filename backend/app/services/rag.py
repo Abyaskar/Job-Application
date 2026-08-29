@@ -131,6 +131,10 @@ class LocalTemplateLLMProvider(LLMProvider):
     without an API key; swap LLM_PROVIDER=anthropic for genuinely
     generative, more fluent explanations in a deployed environment (see
     AnthropicLLMProvider below).
+    
+    V2 Enhancement: Explanations use simple, natural English without
+    technical jargon like "semantic similarity", "embeddings", or "vector
+    distance". Suitable for candidates from any professional background.
     """
 
     def generate_explanation(self, resume, job, score, gap, action, evidence, intent) -> Explanation:
@@ -142,51 +146,68 @@ class LocalTemplateLLMProvider(LLMProvider):
         if intent is not None and intent.role_family is not None:
             if score.intent_gated:
                 why_not_apply.append(
-                    f"This role's title/domain doesn't align with your stated intent of "
-                    f"'{intent.canonical_title}' — it was deprioritized specifically for that reason, "
-                    f"not because of your resume content."
+                    f"This role doesn't align with your stated career goal of "
+                    f"'{intent.canonical_title}' — it was deprioritized for that reason, "
+                    f"not because of your qualifications."
                 )
             elif score.intent_alignment >= 0.85:
                 why_apply.append(
-                    f"This role directly matches your stated career intent of '{intent.canonical_title}'."
+                    f"This role directly matches your career goal of '{intent.canonical_title}'."
                 )
             elif score.intent_alignment >= 0.5:
                 why_apply.append(
-                    f"This role is adjacent to your stated intent of '{intent.canonical_title}' "
-                    f"(related title or shared keywords), though not an exact title match."
+                    f"This role is related to your career goal of '{intent.canonical_title}' "
+                    f"(similar responsibilities or required skills), though not an exact match."
                 )
 
         # --- Skill evidence ---
         if gap.matched_required:
             shown = ", ".join(canonical_label(s) for s in gap.matched_required[:5])
-            why_apply.append(f"Your resume shows direct evidence of {shown}, which this role lists as required.")
+            why_apply.append(f"Your resume shows experience with {shown}, which this role requires.")
 
         if gap.missing_required:
             shown = ", ".join(canonical_label(s) for s in gap.missing_required[:5])
-            why_not_apply.append(f"No evidence found for required skill(s): {shown}.")
+            why_not_apply.append(
+                f"This job expects {shown}, but your resume does not show evidence of these skills. "
+                f"Consider building these skills before applying."
+            )
 
-        # --- Semantic / experience / location ---
+        # --- Semantic / experience / location (V2: no technical jargon) ---
         if score.semantic_similarity >= 0.5:
             why_apply.append(
-                f"Your resume's overall content is semantically close to this job description "
-                f"(similarity {score.semantic_similarity:.2f}), suggesting broader domain alignment "
-                f"beyond keyword overlap."
+                f"Your background and experience align well with this role's requirements "
+                f"(match strength: {score.semantic_similarity:.0%}), suggesting you have the right "
+                f"domain knowledge beyond just specific skills."
             )
         elif score.semantic_similarity < 0.25:
             why_not_apply.append(
-                f"Overall semantic similarity is low ({score.semantic_similarity:.2f}) — this role's "
-                f"domain may differ from your resume's primary focus even where individual skills overlap."
+                f"Your overall background differs from this role's primary focus "
+                f"(match strength: {score.semantic_similarity:.0%}) — even where individual skills overlap, "
+                f"the day-to-day work may be quite different from what you've done."
             )
 
         if score.experience_match < 0.6:
             why_not_apply.append(
-                "Your stated experience is below what this role typically expects; this pulled the score down."
+                "Your work experience level is below what this role typically expects; "
+                "this pulled the score down."
             )
         elif score.experience_match >= 0.9:
-            why_apply.append("Your experience level meets or exceeds what this role typically expects.")
+            why_apply.append(
+                "Your experience level meets or exceeds what this role typically expects."
+            )
 
         if score.location_match < 0.5:
             why_not_apply.append("This job's location doesn't match your stated preferences.")
+
+        # --- Education match ---
+        if score.education_match < 0.5:
+            why_not_apply.append(
+                "Your education level appears below what this role typically requires."
+            )
+        elif score.education_match >= 0.8:
+            why_apply.append(
+                "Your education level meets or exceeds this role's requirements."
+            )
 
         reasons = (why_apply + why_not_apply)[:6]
         summary = ACTION_COPY[action]

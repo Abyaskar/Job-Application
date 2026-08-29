@@ -36,6 +36,41 @@
     "core_skills": ["sql", "excel", "data_visualization", "statistics", "python"],
     "keywords": ["dashboard", "reporting", "kpi", "business intelligence", "tableau", "power bi"]
   },
+  "accountant": {
+    "canonical_title": "Accountant",
+    "aliases": ["accountant", "accounts executive", "account executive", "staff accountant", "junior accountant"],
+    "related_titles": ["Senior Accountant", "Accounts Manager", "Tax Accountant", "Audit Associate"],
+    "core_skills": ["accounting", "gst_compliance", "tally", "bank_reconciliation", "voucher_verification", "ledger_management", "audit_support", "excel"],
+    "keywords": ["bookkeeping", "gst returns", "gstr-1", "gstr-3b", "gstr-2b", "e-way bill", "e-invoice", "bank audit", "tax compliance"]
+  },
+  "senior_accountant": {
+    "canonical_title": "Senior Accountant",
+    "aliases": ["senior accountant", "accounts supervisor", "accounting supervisor", "lead accountant"],
+    "related_titles": ["Accountant", "Accounts Manager", "Finance Manager", "Tax Manager"],
+    "core_skills": ["accounting", "gst_compliance", "tally", "bank_reconciliation", "audit_support", "ledger_management", "excel", "financial_reporting"],
+    "keywords": ["financial statements", "month-end close", "year-end close", "tax planning", "team management", "compliance"]
+  },
+  "tax_consultant": {
+    "canonical_title": "Tax Consultant",
+    "aliases": ["tax consultant", "tax advisor", "gst consultant", "tax specialist"],
+    "related_titles": ["Tax Associate", "Tax Analyst", "GST Officer", "Tax Manager"],
+    "core_skills": ["gst_compliance", "accounting", "audit_support", "tax_planning", "excel"],
+    "keywords": ["gst registration", "gst filing", "tax returns", "tax assessment", "tax advisory", "compliance"]
+  },
+  "audit_associate": {
+    "canonical_title": "Audit Associate",
+    "aliases": ["audit associate", "junior auditor", "staff auditor", "internal auditor"],
+    "related_titles": ["Senior Auditor", "Audit Manager", "External Auditor", "Risk Associate"],
+    "core_skills": ["audit_support", "accounting", "voucher_verification", "bank_reconciliation", "excel"],
+    "keywords": ["audit procedures", "working papers", "risk assessment", "internal controls", "compliance testing"]
+  },
+  "finance_executive": {
+    "canonical_title": "Finance Executive",
+    "aliases": ["finance executive", "finance officer", "finance coordinator", "executive finance"],
+    "related_titles": ["Senior Finance Executive", "Finance Manager", "Accounts Manager", "Financial Analyst"],
+    "core_skills": ["accounting", "financial_analysis", "excel", "gst_compliance", "bank_reconciliation", "financial_reporting"],
+    "keywords": ["budgeting", "forecasting", "financial planning", "cash flow", "variance analysis"]
+  },
   "business_analyst": {
     "canonical_title": "Business Analyst",
     "aliases": ["business analyst", "ba", "product analyst", "operations analyst", "process analyst"],

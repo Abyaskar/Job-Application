@@ -7,7 +7,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api.routers import candidates, evaluation, feedback, health, intent, jobs, recommendations
+from app.api.routers import candidates, evaluation, feedback, health, intent, jobs, recommendations, job_discovery
 from app.core.config import get_settings
 from app.core.logging import configure_logging, get_logger
 from app.db.cache import connect_to_redis
@@ -81,6 +81,7 @@ app.include_router(jobs.router, prefix=settings.API_PREFIX)
 app.include_router(recommendations.router, prefix=settings.API_PREFIX)
 app.include_router(feedback.router, prefix=settings.API_PREFIX)
 app.include_router(evaluation.router, prefix=settings.API_PREFIX)
+app.include_router(job_discovery.router, prefix=settings.API_PREFIX)
 
 
 @app.get("/")
