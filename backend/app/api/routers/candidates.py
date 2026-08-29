@@ -171,7 +171,6 @@ async def upload_resume(
         detected_email=validation_result.detected_email,
         detected_phone=validation_result.detected_phone,
         current_location=validation_result.detected_location,
-        total_experience_years=validation_result.detected_total_experience_years or 0.0,
         processing_metadata={
             "file_type_detected": validation_result.file_type_detected,
             "file_type_expected": validation_result.file_type_expected,
