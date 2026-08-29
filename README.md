@@ -1,6 +1,6 @@
 # Job Application Strategy AI
 
-> **Don't just find jobs. Know which jobs to apply to first — and why.**
+> **Don't just find jobs. Know which jobs to apply to first and why.**
 
 Job Application Strategy AI is an intent-aware job recommendation system that helps students and job seekers make **better decisions about where to apply**.
 
@@ -148,7 +148,7 @@ The project demonstrates:
 
 # How the User Journey Works
 
-## Step 1 — Upload Resume
+## Step 1   Upload Resume
 
 The candidate uploads a resume.
 
@@ -166,7 +166,7 @@ The resume is then used as a personalized input for recommendation.
 
 ---
 
-## Step 2 — Tell Us What You Want
+## Step 2   Tell Us What You Want
 
 The candidate can enter a role or a natural-language goal.
 
@@ -210,7 +210,7 @@ It also considers **where the candidate wants to go**.
 
 ---
 
-# Step 3 — Understand the Job
+# Step 3   Understand the Job
 
 Each job is analyzed for relevant information:
 
@@ -228,7 +228,7 @@ The system uses a skill taxonomy and job-title/skill relationships to make job i
 
 ---
 
-# Step 4 — Match the Candidate With Jobs
+# Step 4   Match the Candidate With Jobs
 
 The recommendation engine combines multiple signals.
 
@@ -272,7 +272,7 @@ The ranking considers:
 
 ---
 
-# Step 5 — Create an Application Strategy
+# Step 5   Create an Application Strategy
 
 The system does not simply return a list.
 
@@ -300,7 +300,7 @@ This turns job recommendation into an **application strategy**.
 
 ---
 
-# Step 6 — Explain the Recommendation
+# Step 6   Explain the Recommendation
 
 Every recommendation should answer a simple question:
 
@@ -328,7 +328,7 @@ This explanation is generated from retrieved evidence rather than allowing the l
 
 ---
 
-# Step 7 — Take Action
+# Step 7   Take Action
 
 The final stage is about reducing the gap between **recommendation and action**.
 
@@ -482,7 +482,7 @@ The system is divided into three main layers.
 
 ---
 
-# Layer 1 — Career Intent
+# Layer 1   Career Intent
 
 A resume describes what a candidate has done.
 
@@ -523,13 +523,13 @@ This layer is deliberately deterministic and inexpensive for normal classificati
 
 ---
 
-# Layer 2 — Job Intelligence
+# Layer 2   Job Intelligence
 
 Two datasets are used to support this layer.
 
-## Dataset 1 — Job Skill Set
+## Dataset 1   Job Skill Set
 
-**Source:** Kaggle — Job Skill Set
+**Source:** Kaggle   Job Skill Set
 
 https://www.kaggle.com/datasets/batuhanmutlu/job-skill-set
 
@@ -550,9 +550,9 @@ The project includes a documented adapter and build script for integrating the r
 
 ---
 
-## Dataset 2 — Resume Data for Ranking
+## Dataset 2   Resume Data for Ranking
 
-**Source:** Kaggle — Resume Data for Ranking
+**Source:** Kaggle   Resume Data for Ranking
 
 https://www.kaggle.com/datasets/thejohnwick001/resume-data-for-ranking
 
@@ -574,7 +574,7 @@ The dataset is intentionally kept separate from the hand-labeled evaluation data
 
 ---
 
-# Layer 3 — Strategy Ranking
+# Layer 3   Strategy Ranking
 
 The final recommendation combines multiple signals:
 
@@ -634,7 +634,7 @@ This is the mechanism that makes the system **strategy-aware rather than similar
 
 ---
 
-# RAG — Why Apply / Why Not Apply
+# RAG   Why Apply / Why Not Apply
 
 The recommendation engine first calculates the score.
 
@@ -1039,7 +1039,7 @@ job-application-strategy-ai/
 
 # Quick Start
 
-## Option 1 — Demo Mode
+## Option 1   Demo Mode
 
 No Docker or external database is required.
 
