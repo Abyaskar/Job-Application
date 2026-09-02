@@ -41,6 +41,28 @@ class EmbeddingProvider(ABC):
     def embed_batch(self, texts: list[str]) -> list[list[float]]:
         ...
 
+    @property
+    @abstractmethod
+    def model_name(self) -> str:
+        """Returns the name/version of the embedding model."""
+        ...
+
+    @property
+    @abstractmethod
+    def embedding_version(self) -> str:
+        """Returns a version identifier for the embedding space.
+        
+        This is used to detect when old embeddings are incompatible
+        with the current provider (e.g., TF-IDF vs transformer).
+        """
+        ...
+
+    @property
+    @abstractmethod
+    def embedding_dimension(self) -> int:
+        """Returns the dimension of the embedding vectors."""
+        ...
+
 
 class LocalTfidfEmbeddingProvider(EmbeddingProvider):
     """TF-IDF + truncated SVD ("latent semantic") embeddings.
@@ -61,6 +83,18 @@ class LocalTfidfEmbeddingProvider(EmbeddingProvider):
         )
         self._svd: TruncatedSVD | None = None
         self._fitted = False
+
+    @property
+    def model_name(self) -> str:
+        return "sklearn-tfidf-svd"
+
+    @property
+    def embedding_version(self) -> str:
+        return f"tfidf-svd-v1-d{self.dim}"
+
+    @property
+    def embedding_dimension(self) -> int:
+        return self.dim
 
     def fit(self, corpus: list[str]) -> None:
         if not corpus:
@@ -95,6 +129,85 @@ class LocalTfidfEmbeddingProvider(EmbeddingProvider):
         return [self.embed(t) for t in texts]
 
 
+class SentenceTransformerEmbeddingProvider(EmbeddingProvider):
+    """Sentence-transformers embedding provider using pretrained models.
+
+    This provider uses the sentence-transformers library to generate
+    contextual embeddings from transformer models. The default model
+    is 'sentence-transformers/all-MiniLM-L6-v2', which produces 384-dimensional
+    embeddings with strong semantic understanding.
+
+    Key characteristics:
+    - Model is loaded once and reused (lazy initialization)
+    - No corpus fitting required (pretrained model)
+    - Produces normalized vectors suitable for cosine similarity
+    - Runs entirely locally with no API calls
+    """
+
+    def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2"):
+        self._model_name = model_name
+        self._model = None
+        self._dim = 384  # all-MiniLM-L6-v2 produces 384-dim embeddings
+
+    @property
+    def model_name(self) -> str:
+        return self._model_name
+
+    @property
+    def embedding_version(self) -> str:
+        return f"st-{self._model_name.replace('/', '-')}-v1"
+
+    @property
+    def embedding_dimension(self) -> int:
+        return self._dim
+
+    def _get_model(self):
+        """Lazy-load the model on first use."""
+        if self._model is None:
+            from sentence_transformers import SentenceTransformer
+            self._model = SentenceTransformer(self._model_name)
+        return self._model
+
+    def fit(self, corpus: list[str]) -> None:
+        """No-op for pretrained models - they don't require fitting.
+        
+        Args:
+            corpus: Ignored (pretrained model doesn't need fitting)
+        """
+        logger.info("embeddings.fit_skipped", reason="pretrained_model", model=self._model_name)
+        return
+
+    def embed(self, text: str) -> list[float]:
+        """Generate a single embedding vector.
+        
+        Args:
+            text: Text to embed
+            
+        Returns:
+            L2-normalized embedding vector as list of floats
+        """
+        model = self._get_model()
+        # Encode returns numpy array; normalize=True gives unit vectors
+        embedding = model.encode(text, convert_to_numpy=True, normalize_embeddings=True)
+        return embedding.tolist()
+
+    def embed_batch(self, texts: list[str]) -> list[list[float]]:
+        """Generate embeddings for multiple texts efficiently.
+        
+        Args:
+            texts: List of texts to embed
+            
+        Returns:
+            List of L2-normalized embedding vectors
+        """
+        if not texts:
+            return []
+        model = self._get_model()
+        # Batch encoding is more efficient than individual calls
+        embeddings = model.encode(texts, convert_to_numpy=True, normalize_embeddings=True)
+        return embeddings.tolist()
+
+
 class VertexAIEmbeddingProvider(EmbeddingProvider):
     """Production stub: Vertex AI `text-embedding-004` via google-cloud-aiplatform.
 
@@ -127,6 +240,8 @@ def get_embedding_provider() -> EmbeddingProvider:
         settings = get_settings()
         if settings.EMBEDDING_PROVIDER == "vertex_ai":
             _provider = VertexAIEmbeddingProvider()
+        elif settings.EMBEDDING_PROVIDER == "sentence_transformers":
+            _provider = SentenceTransformerEmbeddingProvider()
         else:
             _provider = LocalTfidfEmbeddingProvider(dim=settings.EMBEDDING_DIM)
     return _provider

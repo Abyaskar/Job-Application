@@ -36,6 +36,7 @@ from app.services.intent import title_alignment_score
 from app.services.rag import build_explanation
 from app.services.ranking import compute_uncertainty, recommend_action, score_candidate_job
 from app.services.vector_index import get_job_vector_index
+from app.services.learned_ranker import LearnedRanker, extract_candidate_job_features
 
 logger = get_logger("services.recommender")
 
@@ -102,8 +103,9 @@ async def rank_jobs_for_candidate(
     domain_filter: str | None = None,
     use_cache: bool = True,
     intent: IntentProfile | None = None,
+    use_learned_ranker: bool = False,  # NEW: Use ML ranker if available
 ) -> tuple[list[Recommendation], dict]:
-    meta = {"cache_hit": False, "latency_ms": 0.0, "candidates_scored": 0}
+    meta = {"cache_hit": False, "latency_ms": 0.0, "candidates_scored": 0, "ranking_method": "hybrid_baseline"}
     intent_signature = f"{intent.role_family}:{intent.confidence}" if intent else "none"
     key = _cache_key(resume.candidate_id, mode, top_k, location_filter, domain_filter, intent_signature)
 
@@ -142,9 +144,35 @@ async def rank_jobs_for_candidate(
 
         meta["candidates_scored"] = len(all_jobs)
 
+        # Try to load learned ranker if requested
+        learned_ranker: LearnedRanker | None = None
+        if use_learned_ranker:
+            try:
+                learned_ranker = LearnedRanker.load_model()
+                if learned_ranker.is_trained:
+                    meta["ranking_method"] = "learned_ml"
+                    logger.info("learned_ranker.loaded_for_inference")
+            except FileNotFoundError:
+                logger.warning("learned_ranker.not_found", fallback="hybrid_baseline")
+                meta["ranking_method"] = "hybrid_baseline"
+            except Exception as e:
+                logger.warning("learned_ranker.load_failed", error=str(e), fallback="hybrid_baseline")
+                meta["ranking_method"] = "hybrid_baseline"
+
         scored: list[tuple[ParsedJob, object, object]] = []
         for job in all_jobs:
-            breakdown, gap = score_candidate_job(resume, job, settings, mode=mode.value, intent=intent)
+            if learned_ranker is not None and learned_ranker.is_trained:
+                # Use ML ranker
+                features = extract_candidate_job_features(resume, job, intent)
+                ml_proba = learned_ranker.predict_proba(features)
+                
+                # Create a ScoreBreakdown with ML probability as final_score
+                breakdown, gap = score_candidate_job(resume, job, settings, mode=mode.value, intent=intent)
+                breakdown.final_score = round(ml_proba, 4)  # Override with ML probability
+            else:
+                # Use deterministic hybrid ranker
+                breakdown, gap = score_candidate_job(resume, job, settings, mode=mode.value, intent=intent)
+            
             scored.append((job, breakdown, gap))
 
         # V2: Separate eligible and ineligible jobs BEFORE ranking

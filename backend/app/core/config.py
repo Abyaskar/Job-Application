@@ -43,9 +43,10 @@ class Settings(BaseSettings):
     # "local" providers require no network/API key and are used by default so
     # the project is reviewable offline. "vertex_ai" / "openai" / "anthropic"
     # are implemented behind the same interface for a one-line prod swap.
-    EMBEDDING_PROVIDER: str = "local_tfidf"
+    EMBEDDING_PROVIDER: str = "sentence_transformers"  # Changed from "local_tfidf" to use transformer embeddings
     LLM_PROVIDER: str = "local_template"
-    EMBEDDING_DIM: int = 128
+    EMBEDDING_DIM: int = 128  # Used only for local_tfidf; sentence-transformers uses 384
+    SENTENCE_TRANSFORMER_MODEL: str = "sentence-transformers/all-MiniLM-L6-v2"
     ANTHROPIC_API_KEY: str | None = None
     OPENAI_API_KEY: str | None = None
     GCP_PROJECT_ID: str | None = None

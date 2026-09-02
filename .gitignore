@@ -1,64 +1,63 @@
 ```
-# Dependencies
-backend/venv/
-backend/.venv/
-frontend/node_modules/
-
-# Python
-__pycache__/
+# Compiled and build artifacts
 *.pyc
-*.pyo
-*.pyd
-backend/__pycache__/
-backend/**/*.pyc
-backend/**/*.pyo
-backend/**/*.pyd
+__pycache__/
+*.o
+*.obj
 
-# Build artifacts
-backend/dist/
-backend/build/
-frontend/dist/
-frontend/build/
-backend/target/
-frontend/.next/
-.next/
+# Dependencies
+.venv/
+venv/
+node_modules/
 
-# Logs
+# Logs and temp files
 *.log
-backend/*.log
-frontend/*.log
+*.tmp
+*.swp
 
-# Environment variables
+# Environment
 .env
 .env.local
-.env.*
-backend/.env
-frontend/.env
+*.env.*
 
-# IDE files
+# Editors
 .vscode/
 .idea/
-*.swp
-*.swo
-*.tmp
 
-# Coverage reports
+# Coverage
+.coverage
 coverage/
 htmlcov/
-.coverage
 
-# Cache directories
+# Python specific
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# MyPy
 .mypy_cache/
+.dmypy.json
+dmypy.json
+
+# PyTest
 .pytest_cache/
-.backend/.pytest_cache/
-frontend/.cache/
-.cache/
 
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Testing
-tests/__pycache__/
-backend/tests/__pycache__/
+# Original rules preserved
+*.log
 ```
