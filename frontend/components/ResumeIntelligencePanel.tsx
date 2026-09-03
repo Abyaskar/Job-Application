@@ -129,7 +129,7 @@ export function ResumeIntelligencePanel({
   // Processing steps visualization
   const processingSteps = [
     { id: "file_uploaded", label: "File Recognized", completed: true },
-    { id: "type_detected", label: "Content Extracted", completed: resume.extraction_quality_score > 0.3 },
+    { id: "type_detected", label: "Content Extracted", completed: (resume.extraction_quality_score ?? 0) > 0.3 },
     { id: "resume_detected", label: "Resume Detected", completed: resume.document_type === "resume" },
     { id: "information_identified", label: "Information Identified", completed: !!resume.detected_name || !!resume.detected_email },
     { id: "skills_identified", label: "Skills Identified", completed: resume.skills.length > 0 },
