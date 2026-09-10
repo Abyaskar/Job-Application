@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 import { ActionBadge, UncertaintyBadge } from "./ActionBadge";
 import { ScoreRing } from "./ScoreRing";
-import type { Recommendation } from "@/lib/types";
+import type { Recommendation, IntentProfile } from "@/lib/types";
 
 const buildLinkedInUrl = (role: string, location?: string) => {
   const params = new URLSearchParams();
@@ -21,6 +21,10 @@ const buildLinkedInUrl = (role: string, location?: string) => {
     params.set("location", location);
   }
 
+  // Always use newest-first sorting and last-24-hours freshness
+  params.set("sortBy", "DD");  // DD = Date descending (newest first)
+  params.set("f_TPR", "r86400");  // r86400 = posted within 86400 seconds (24 hours)
+
   return `https://www.linkedin.com/jobs/search/?${params.toString()}`;
 };
 
@@ -28,15 +32,22 @@ export function RankingCard({
   rec,
   rank,
   candidateId,
+  activeIntent,
+  candidateLocation,
 }: {
   rec: Recommendation;
   rank: number;
   candidateId: string;
+  activeIntent: IntentProfile | null;
+  candidateLocation: string | null;
 }) {
-  const linkedInUrl = buildLinkedInUrl(
-    rec.job_title,
-    rec.job_location
-  );
+  // Bug 1 fix: Use active intent's canonical title, NOT the job card's title
+  const linkedInKeyword = activeIntent?.canonical_title || rec.job_title;
+  
+  // Bug 2 fix: Use candidate's resume-parsed location, NOT the job card's location
+  const linkedInLocation = candidateLocation || undefined;
+  
+  const linkedInUrl = buildLinkedInUrl(linkedInKeyword, linkedInLocation);
 
   return (
     <motion.div

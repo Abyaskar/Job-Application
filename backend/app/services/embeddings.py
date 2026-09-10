@@ -144,7 +144,10 @@ class SentenceTransformerEmbeddingProvider(EmbeddingProvider):
     - Runs entirely locally with no API calls
     """
 
-    def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2"):
+    def __init__(self, model_name: str | None = None):
+        if model_name is None:
+            settings = get_settings()
+            model_name = getattr(settings, 'SENTENCE_TRANSFORMER_MODEL', 'sentence-transformers/all-MiniLM-L6-v2')
         self._model_name = model_name
         self._model = None
         self._dim = 384  # all-MiniLM-L6-v2 produces 384-dim embeddings
@@ -162,9 +165,20 @@ class SentenceTransformerEmbeddingProvider(EmbeddingProvider):
         return self._dim
 
     def _get_model(self):
-        """Lazy-load the model on first use."""
+        """Lazy-load the model on first use.
+        
+        Raises:
+            ImportError: If sentence-transformers package is not installed.
+        """
         if self._model is None:
-            from sentence_transformers import SentenceTransformer
+            try:
+                from sentence_transformers import SentenceTransformer
+            except ImportError as e:
+                raise ImportError(
+                    "Sentence Transformers provider is configured but sentence-transformers "
+                    "is not installed. Install requirements.txt or change EMBEDDING_PROVIDER "
+                    "explicitly to tfidf."
+                ) from e
             self._model = SentenceTransformer(self._model_name)
         return self._model
 

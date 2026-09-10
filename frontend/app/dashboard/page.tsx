@@ -33,6 +33,7 @@ export default function DashboardPage() {
   const [latencyMs, setLatencyMs] = useState<number | null>(null);
   const [intent, setIntent] = useState<IntentProfile | null>(null);
   const [useIntent, setUseIntent] = useState(true);
+  const [candidateLocation, setCandidateLocation] = useState<string | null>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -40,6 +41,20 @@ export default function DashboardPage() {
 
     setCandidateId(uploadedCandidateId || SAMPLE_CANDIDATES[0].id);
   }, []);
+
+  // Fetch candidate's resume-parsed location for LinkedIn URL builder (Bug 2 fix)
+  useEffect(() => {
+    if (!candidateId) return;
+    
+    api
+      .getResume(candidateId)
+      .then((resume) => {
+        // Use current_location from resume parsing as the source of truth
+        const loc = resume.current_location || resume.preferred_locations?.[0] || null;
+        setCandidateLocation(loc);
+      })
+      .catch(() => setCandidateLocation(null));
+  }, [candidateId]);
 
   useEffect(() => {
     function handleKey(e: KeyboardEvent) {
@@ -187,7 +202,14 @@ export default function DashboardPage() {
           <AnimatePresence>
             {!loading &&
               recommendations.map((rec, i) => (
-                <RankingCard key={rec.job_id} rec={rec} rank={i + 1} candidateId={candidateId} />
+                <RankingCard 
+                  key={rec.job_id} 
+                  rec={rec} 
+                  rank={i + 1} 
+                  candidateId={candidateId}
+                  activeIntent={intent}
+                  candidateLocation={candidateLocation}
+                />
               ))}
           </AnimatePresence>
         </div>
