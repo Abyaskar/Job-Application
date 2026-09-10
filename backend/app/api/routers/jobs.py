@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from app.api.deps import get_job_repo
 from app.core.logging import get_logger
 from app.models.schemas import JobIn, ParsedJob
-from app.repositories.repositories import JobRepository
+from app.repositories.repository import JobRepository
 from app.services.extraction import extract_job_requirements
 from app.services.recommender import rebuild_job_index
 

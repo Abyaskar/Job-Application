@@ -1,0 +1,37 @@
+{
+  "model_version": "dataset_v1",
+  "training_timestamp": "2026-09-08T06:57:21.350318",
+  "n_training_examples": 32000,
+  "n_positive_examples": 8000,
+  "n_negative_examples": 24000,
+  "feature_names": [
+    "semantic_similarity",
+    "intent_alignment",
+    "required_skill_coverage",
+    "preferred_skill_coverage",
+    "matched_required_skill_count",
+    "missing_required_skill_count",
+    "experience_match",
+    "education_match",
+    "location_match",
+    "seniority_match",
+    "domain_match",
+    "resume_experience_years",
+    "required_experience_years",
+    "skill_gap_ratio",
+    "intent_confidence"
+  ],
+  "evaluation_metrics": {
+    "test_accuracy": 0.9467,
+    "test_precision": 0.8671,
+    "test_recall": 0.9295,
+    "test_f1": 0.8972,
+    "test_roc_auc": 0.9863,
+    "test_ranking_candidates": 2000,
+    "test_hit_rate_at_1": 0.972,
+    "test_hit_rate_at_3": 0.9985,
+    "test_mrr": 0.985
+  },
+  "training_dataset_source": "dataset_training_examples.csv",
+  "model_type": "LogisticRegression"
+}

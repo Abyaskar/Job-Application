@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from app.api.deps import get_intent_repo
 from app.core.logging import get_logger
 from app.models.schemas import IntentIn, IntentProfile
-from app.repositories.repositories import IntentRepository
+from app.repositories.repository import IntentRepository
 from app.services.intent import normalize_intent
 
 router = APIRouter(prefix="/intent", tags=["intent"])

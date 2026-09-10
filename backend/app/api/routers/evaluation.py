@@ -9,7 +9,7 @@ from app.api.deps import get_app_settings, get_candidate_repo, get_feedback_repo
 from app.core.config import Settings
 from app.db.cache import get_cache
 from app.models.schemas import SearchMode
-from app.repositories.repositories import CandidateRepository, FeedbackRepository, JobRepository, RecommendationRepository
+from app.repositories.repository import CandidateRepository, FeedbackRepository, JobRepository, RecommendationRepository
 from app.services.evaluation import RankedResult, aggregate_metrics
 from app.services.intent import normalize_intent
 from app.services.recommender import rank_jobs_for_candidate

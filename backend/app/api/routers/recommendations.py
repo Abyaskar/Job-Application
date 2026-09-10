@@ -12,7 +12,7 @@ from app.api.deps import (
 from app.core.config import Settings
 from app.core.logging import get_logger
 from app.models.schemas import RankRequest, Recommendation, SearchMode
-from app.repositories.repositories import (
+from app.repositories.repository import (
     CandidateRepository,
     IntentRepository,
     JobRepository,

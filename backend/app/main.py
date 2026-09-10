@@ -15,7 +15,7 @@ from app.db.mongo import close_mongo_connection, connect_to_mongo
 from app.middleware.rate_limit import RateLimitMiddleware
 from app.middleware.request_logging import RequestLoggingMiddleware
 from app.db.mongo import get_db
-from app.repositories.repositories import CandidateRepository, JobRepository
+from app.repositories.repository import CandidateRepository, JobRepository
 from app.services.seed import seed_demo_data
 
 settings = get_settings()

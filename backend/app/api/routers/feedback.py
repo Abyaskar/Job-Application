@@ -1,45 +1,235 @@
 from __future__ import annotations
 
-from fastapi import APIRouter, Depends
+from fastapi import (
+    APIRouter,
+    Depends,
+    HTTPException,
+)
 
-from app.api.deps import get_application_repo, get_feedback_repo
+from app.api.deps import (
+    get_application_repo,
+    get_candidate_repo,
+    get_feedback_repo,
+    get_intent_repo,
+    get_job_repo,
+    get_learning_candidate_repo,
+    get_training_example_repo,
+)
+
 from app.core.logging import get_logger
-from app.models.schemas import ApplicationRecord, FeedbackIn
-from app.repositories.repositories import ApplicationRepository, FeedbackRepository
 
-router = APIRouter(prefix="/feedback", tags=["feedback"])
-logger = get_logger("api.feedback")
+from app.models.schemas import (
+    ApplicationRecord,
+    FeedbackIn,
+)
+
+from app.repositories.repository import (
+    ApplicationRepository,
+    CandidateRepository,
+    FeedbackRepository,
+    IntentRepository,
+    JobRepository,
+    LearningCandidateRepository,
+    TrainingExampleRepository,
+)
+
+from app.services.learned_ranker import (
+    CandidateJobFeatures,
+    extract_candidate_job_features,
+)
 
 
-@router.post("", status_code=201)
+router = APIRouter(
+    prefix="/feedback",
+    tags=["feedback"],
+)
+
+logger = get_logger(
+    "api.feedback"
+)
+
+
+@router.post(
+    "",
+    status_code=201,
+)
 async def submit_feedback(
     payload: FeedbackIn,
-    repo: FeedbackRepository = Depends(get_feedback_repo),
-    app_repo: ApplicationRepository = Depends(get_application_repo),
+
+    repo: FeedbackRepository = Depends(
+        get_feedback_repo
+    ),
+
+    app_repo: ApplicationRepository = Depends(
+        get_application_repo
+    ),
+
+    candidate_repo: CandidateRepository = Depends(
+        get_candidate_repo
+    ),
+
+    job_repo: JobRepository = Depends(
+        get_job_repo
+    ),
+
+    intent_repo: IntentRepository = Depends(
+        get_intent_repo
+    ),
+
+    learning_candidate_repo: LearningCandidateRepository = Depends(
+        get_learning_candidate_repo
+    ),
+
+    training_repo: TrainingExampleRepository = Depends(
+        get_training_example_repo
+    ),
 ) -> dict:
-    """Captures accept/reject signal on a recommendation.
 
-    This is the training signal for closing the loop described in the
-    roadmap ("recommender learns from accepted/rejected recommendations").
-    In this project's scope that's implemented as (a) an acceptance-rate
-    metric surfaced in /evaluation/summary, and (b) a documented path in
-    the README for how these labels would feed a learned re-ranker
-    (e.g. logistic regression over the same score components) in a
-    follow-up iteration -- explicitly scoped out here to keep the ranking
-    layer deterministic and evaluable rather than shipping an undertrained
-    model on a handful of feedback events.
-    """
-    await repo.save(payload)
+    # ========================================================
+    # 1. ALWAYS save normal feedback
+    # ========================================================
+
+    await repo.save(
+        payload
+    )
+
+    # ========================================================
+    # 2. Save application if applicable
+    # ========================================================
+
     if payload.applied:
+
         await app_repo.upsert(
-            ApplicationRecord(candidate_id=payload.candidate_id, job_id=payload.job_id, status="applied")
+            ApplicationRecord(
+                candidate_id=payload.candidate_id,
+                job_id=payload.job_id,
+                status="applied",
+            )
         )
-    logger.info("feedback.recorded", candidate_id=payload.candidate_id, job_id=payload.job_id, accepted=payload.accepted)
-    return {"status": "recorded"}
 
+    # ========================================================
+    # 3. Find candidate
+    # ========================================================
 
-@router.get("/{candidate_id}")
-async def get_feedback_history(
-    candidate_id: str, repo: FeedbackRepository = Depends(get_feedback_repo)
-) -> list[dict]:
-    return await repo.list_for_candidate(candidate_id)
+    resume = await candidate_repo.get_resume(
+        payload.candidate_id
+    )
+
+    if not resume:
+
+        raise HTTPException(
+            status_code=404,
+            detail="Candidate resume not found.",
+        )
+
+    # ========================================================
+    # 4. Find job
+    # ========================================================
+
+    job = await job_repo.get_job(
+        payload.job_id
+    )
+
+    if not job:
+
+        raise HTTPException(
+            status_code=404,
+            detail="Job not found.",
+        )
+
+    # ========================================================
+    # 5. IMPORTANT:
+    # Demo candidates NEVER enter ML training
+    # ========================================================
+
+    training_eligible = (
+        await learning_candidate_repo
+        .is_training_eligible(
+            payload.candidate_id
+        )
+    )
+
+    if not training_eligible:
+
+        logger.info(
+            "feedback.demo_candidate",
+            candidate_id=payload.candidate_id,
+            job_id=payload.job_id,
+        )
+
+        return {
+            "status": "recorded",
+            "training_example_created": False,
+            "reason": "demo_or_non_learning_candidate",
+        }
+
+    # ========================================================
+    # 6. Get candidate intent
+    # ========================================================
+
+    intent = await intent_repo.get(
+        payload.candidate_id
+    )
+
+    # ========================================================
+    # 7. Extract SAME features used during recommendation
+    # ========================================================
+
+    features = extract_candidate_job_features(
+        resume,
+        job,
+        intent,
+    )
+
+    # ========================================================
+    # 8. Convert behavior into supervised label
+    # ========================================================
+
+    if payload.accepted:
+
+        label = 1
+        outcome = "accepted"
+
+    elif payload.applied:
+
+        label = 1
+        outcome = "applied"
+
+    else:
+
+        label = 0
+        outcome = "rejected"
+
+    # ========================================================
+    # 9. Store training example
+    # ========================================================
+
+    example_id = await training_repo.save(
+        candidate_id=payload.candidate_id,
+        job_id=payload.job_id,
+        label=label,
+        features=features.to_array().tolist(),
+        feature_names=(
+            CandidateJobFeatures
+            .get_feature_names()
+        ),
+        source="feedback",
+        outcome=outcome,
+    )
+
+    logger.info(
+        "learning.example_created",
+        example_id=example_id,
+        candidate_id=payload.candidate_id,
+        job_id=payload.job_id,
+        label=label,
+        outcome=outcome,
+    )
+
+    return {
+        "status": "recorded",
+        "training_example_created": True,
+        "training_example_id": example_id,
+        "label": label,
+        "outcome": outcome,
+    }

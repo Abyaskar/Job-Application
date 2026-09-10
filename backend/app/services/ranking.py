@@ -72,28 +72,66 @@ INTENT_GATE_CAP = 0.35  # the final-score ceiling applied to gated (off-intent) 
 ELIGIBILITY_MIN_SKILL_COVERAGE = 0.5  # Minimum required skill coverage to be eligible (50%)
 ELIGIBILITY_SOFT_THRESHOLD = 0.3  # Below this, definitely not eligible unless other factors compensate
 
+def _normalize_skill(skill: str) -> str:
+    """Normalize skill names so equivalent formats can match."""
+    import re
+
+    text = str(skill).strip().lower()
+
+    # Convert common separators to underscores.
+    text = re.sub(r"[\s./\\-]+", "_", text)
+
+    # Keep letters, numbers, #, + and underscores.
+    text = re.sub(r"[^a-z0-9_+#]", "", text)
+
+    # Collapse repeated underscores.
+    text = re.sub(r"_+", "_", text).strip("_")
+
+    return text
 
 def compute_hard_skill_match(
     candidate_skills: list[str], requirements: ExtractedRequirements
 ) -> tuple[float, SkillGap]:
-    candidate_set = set(candidate_skills)
-    required_set = set(requirements.required_skills)
-    preferred_set = set(requirements.preferred_skills)
 
-    matched_required = sorted(candidate_set & required_set)
-    missing_required = sorted(required_set - candidate_set)
-    missing_preferred = sorted(preferred_set - candidate_set)
+    # Normalize both sides before comparison.
+    candidate_normalized = {
+        _normalize_skill(skill)
+        for skill in candidate_skills
+        if str(skill).strip()
+    }
 
-    if required_set:
-        required_coverage = len(matched_required) / len(required_set)
+    required_normalized = {
+        _normalize_skill(skill)
+        for skill in requirements.required_skills
+        if str(skill).strip()
+    }
+
+    preferred_normalized = {
+        _normalize_skill(skill)
+        for skill in requirements.preferred_skills
+        if str(skill).strip()
+    }
+
+    matched_required = sorted(candidate_normalized & required_normalized)
+    missing_required = sorted(required_normalized - candidate_normalized)
+    missing_preferred = sorted(preferred_normalized - candidate_normalized)
+
+    if required_normalized:
+        required_coverage = len(matched_required) / len(required_normalized)
     else:
-        required_coverage = 1.0  # no explicit requirements extracted -> don't penalize
+        required_coverage = 1.0
 
     preferred_bonus = 0.0
-    if preferred_set:
-        preferred_bonus = 0.15 * (len(candidate_set & preferred_set) / len(preferred_set))
 
-    score = min(1.0, required_coverage * 0.85 + preferred_bonus + (0.15 if required_coverage == 1 else 0))
+    if preferred_normalized:
+        preferred_bonus = (
+            0.15
+            * (
+                len(candidate_normalized & preferred_normalized)
+                / len(preferred_normalized)
+            )
+        )
+
     score = min(1.0, required_coverage + preferred_bonus)
 
     gap = SkillGap(
@@ -102,8 +140,8 @@ def compute_hard_skill_match(
         matched_required=matched_required,
         coverage_ratio=round(required_coverage, 4),
     )
-    return round(score, 4), gap
 
+    return round(score, 4), gap
 
 def determine_eligibility(
     skill_gap: SkillGap,

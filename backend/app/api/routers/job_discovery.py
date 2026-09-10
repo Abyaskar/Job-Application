@@ -12,7 +12,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from app.api.deps import get_candidate_repo
 from app.core.logging import get_logger
 from app.models.schemas import ParsedResume
-from app.repositories.repositories import CandidateRepository
+from app.repositories.repository import CandidateRepository
 from app.services.job_discovery import (
     JobDiscoveryResult,
     discover_jobs_for_candidate,

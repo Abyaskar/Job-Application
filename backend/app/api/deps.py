@@ -2,13 +2,16 @@ from __future__ import annotations
 
 from app.core.config import Settings, get_settings
 from app.db.mongo import get_db
-from app.repositories.repositories import (
+
+from app.repositories.repository import (
     ApplicationRepository,
     CandidateRepository,
     FeedbackRepository,
     IntentRepository,
     JobRepository,
     RecommendationRepository,
+    LearningCandidateRepository,
+    TrainingExampleRepository,
 )
 
 
@@ -34,6 +37,14 @@ def get_application_repo() -> ApplicationRepository:
 
 def get_intent_repo() -> IntentRepository:
     return IntentRepository(get_db())
+
+
+def get_learning_candidate_repo() -> LearningCandidateRepository:
+    return LearningCandidateRepository(get_db())
+
+
+def get_training_example_repo() -> TrainingExampleRepository:
+    return TrainingExampleRepository(get_db())
 
 
 def get_app_settings() -> Settings:

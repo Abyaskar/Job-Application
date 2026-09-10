@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Alice Johnson",
+    "description": "Experienced full-stack software engineer with 5 years of expertise in building scalable web applications. Proficient in modern web technologies and cloud infrastructure. Proven track record of delivering high-quality code and leading technical initiatives.",
+    "resume_text": "Education: Bachelor's in Computer Science\nExperience: 5 years\nSkills: Python, JavaScript, React, Node.js, SQL, Docker, Kubernetes, AWS, Problem Solving, Teamwork",
+    "expected_roles": [
+      "Full Stack Developer",
+      "Software Engineer",
+      "Backend Developer"
+    ]
+  },
+  {
+    "name": "Bob Smith",
+    "description": "Data scientist with 3 years of experience driving insights from complex datasets using advanced statistical and machine learning techniques. Strong background in predictive modeling and data visualization. Passionate about solving business problems through data-driven solutions.",
+    "resume_text": "Education: Master's in Data Science\nExperience: 3 years\nSkills: Python, Machine Learning, TensorFlow, PyTorch, SQL, Statistics, Data Analysis, Pandas",
+    "expected_roles": [
+      "Data Scientist",
+      "Machine Learning Engineer",
+      "AI/ML Specialist"
+    ]
+  },
+  {
+    "name": "Carol Williams",
+    "description": "Digital marketing specialist with 2 years of experience creating engaging content and driving online brand presence. Expertise in social media strategy, SEO, and digital analytics. Results-driven professional focused on increasing customer engagement and ROI.",
+    "resume_text": "Education: Bachelor's in Marketing\nExperience: 2 years\nSkills: Digital Marketing, SEO, Content Strategy, Social Media, Analytics, Excel, Communication",
+    "expected_roles": [
+      "Digital Marketing Manager",
+      "SEO Specialist",
+      "Content Marketing Manager"
+    ]
+  },
+  {
+    "name": "David Martinez",
+    "description": "Licensed electrician with 4 years of hands-on experience in residential and commercial electrical installations. Certified in electrical safety standards and equipped with strong troubleshooting abilities. Committed to delivering high-quality work while maintaining safety protocols.",
+    "resume_text": "Education: Trade School - Electrical, Apprenticeship Completed\nExperience: 4 years\nSkills: Electrical Systems, Circuit Installation, Safety Protocols, Troubleshooting, Code Compliance, Problem Solving, Customer Service",
+    "expected_roles": [
+      "Electrician",
+      "Electrical Technician",
+      "Senior Electrician"
+    ]
+  },
+  {
+    "name": "Emma Thompson",
+    "description": "Culinary professional with 6 years of experience in high-end restaurant environments. Skilled in menu development, kitchen management, and staff training. Known for creative cuisine and consistency in food quality. Passionate about culinary excellence and team leadership.",
+    "resume_text": "Education: Culinary School Diploma\nExperience: 6 years\nSkills: Culinary Arts, Kitchen Management, Menu Development, Food Safety, Leadership, Creativity, Staff Training",
+    "expected_roles": [
+      "Head Chef",
+      "Sous Chef",
+      "Executive Chef"
+    ]
+  },
+  {
+    "name": "Frank Wilson",
+    "description": "Professional healthcare administrator with 7 years of experience managing hospital operations and optimizing patient care. Strong background in healthcare management, compliance, and budget control. Dedicated to improving healthcare delivery and staff coordination.",
+    "resume_text": "Education: Bachelor's in Healthcare Administration, MBA\nExperience: 7 years\nSkills: Healthcare Management, Budget Planning, Staff Coordination, Compliance, Problem Solving, Communication, Leadership",
+    "expected_roles": [
+      "Hospital Administrator",
+      "Healthcare Manager",
+      "Operations Manager"
+    ]
+  },
+  {
+    "name": "Grace Lee",
+    "description": "Environmental scientist with 3 years of field research experience focused on wildlife conservation and ecosystem management. Skilled in data collection, environmental analysis, and conservation planning. Passionate about sustainable practices and biodiversity protection.",
+    "resume_text": "Education: Bachelor's in Environmental Science\nExperience: 3 years\nSkills: Wildlife Biology, Field Research, Data Analysis, Conservation Planning, Environmental Assessment, Problem Solving, Communication",
+    "expected_roles": [
+      "Wildlife Biologist",
+      "Conservation Officer",
+      "Park Ranger"
+    ]
+  },
+  {
+    "name": "Henry Kumar",
+    "description": "Fashion retail manager with 5 years of experience leading store operations and driving sales performance. Expertise in inventory management, staff supervision, and customer relations. Track record of exceeding sales targets and improving store profitability.",
+    "resume_text": "Education: Associate in Business Management\nExperience: 5 years\nSkills: Store Management, Sales Leadership, Inventory Control, Staff Management, Customer Service, Problem Solving, Business Acumen",
+    "expected_roles": [
+      "Retail Manager",
+      "Store Manager",
+      "Sales Manager"
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+name,description_length,resume_text_length,expected_roles_count,expected_roles
+Alice Johnson,256,161,3,Full Stack Developer | Software Engineer | Backend Developer
+Bob Smith,279,149,3,Data Scientist | Machine Learning Engineer | AI/ML Specialist
+Carol Williams,259,150,3,Digital Marketing Manager | SEO Specialist | Content Marketing Manager
+David Martinez,283,218,3,Electrician | Electrical Technician | Senior Electrician
+Emma Thompson,272,167,3,Head Chef | Sous Chef | Executive Chef
+Frank Wilson,265,198,3,Hospital Administrator | Healthcare Manager | Operations Manager
+Grace Lee,271,203,3,Wildlife Biologist | Conservation Officer | Park Ranger
+Henry Kumar,258,195,3,Retail Manager | Store Manager | Sales Manager

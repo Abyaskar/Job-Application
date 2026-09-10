@@ -29,7 +29,7 @@ from app.models.schemas import (
     Recommendation,
     SearchMode,
 )
-from app.repositories.repositories import JobRepository, RecommendationRepository
+from app.repositories.repository import JobRepository, RecommendationRepository
 from app.services.embeddings import get_embedding_provider
 from app.services.evaluation import LatencyTimer
 from app.services.intent import title_alignment_score

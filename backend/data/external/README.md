@@ -25,7 +25,7 @@ uses to expand a resolved role family's related titles into skills.
 **To use the real dataset:**
 ```bash
 # 1. Download job-skill-set.csv from Kaggle and place it here:
-cp ~/Downloads/job_skill_set.csv backend/data/external/job_skill_set.csv
+cp ~/Downloads/job_skill_set.csv /workspaces/Job-Application/backend/data/external/job_skill_set.csv
 
 # 2. Run the build script (idempotent — safe to re-run)
 python backend/scripts/build_taxonomy_from_job_skill_set.py
@@ -51,7 +51,7 @@ with dataset-derived cases rather than only hand-labeled ones.
 
 **To use the real dataset:**
 ```bash
-cp ~/Downloads/resume_data_for_ranking.csv backend/data/external/resume_ranking.csv
+cp ~/Downloads/resume_data_for_ranking.csv /workspaces/Job-Application/backend/data/external/resume_ranking.csv
 python backend/scripts/build_eval_set_from_resume_ranking.py
 ```
 This writes `data/eval_labels_dataset_augmented.json` in the same shape as `eval_labels.json`,

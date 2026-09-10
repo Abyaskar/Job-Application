@@ -1,0 +1,325 @@
+Job Title,Category,Education Requirement,Experience Years,Required Skills,Salary Range
+Software Engineer,Technology,Bachelor's in Computer Science|Bachelor's in Engineering,2,Python|Java|C++|Git|Software Design|Problem Solving,80-150K
+Full Stack Developer,Technology,Diploma in IT|Bachelor's in Computer Science,2,JavaScript|React|Node.js|HTML/CSS|Database|Git,75-140K
+Frontend Developer,Technology,Diploma in IT|Bachelor's in Computer Science,1,JavaScript|React|Vue.js|CSS|HTML|UI/UX Design,70-130K
+Backend Developer,Technology,Bachelor's in Computer Science,2,Python|Java|Node.js|Database Design|API Development|SQL,75-135K
+DevOps Engineer,Technology,Bachelor's in Computer Science|IT Certification,3,Docker|Kubernetes|AWS|Linux|CI/CD|Scripting,85-150K
+Cloud Architect,Technology,Bachelor's in Computer Science|Cloud Certification,5,AWS|Azure|GCP|System Design|Networking|Security,120-200K
+Data Scientist,Technology,Master's in Data Science|Bachelor's in Mathematics,2,Python|Machine Learning|Statistics|TensorFlow|SQL|Data Analysis,90-160K
+Machine Learning Engineer,Technology,Master's in Computer Science|Master's in AI,3,Python|TensorFlow|PyTorch|Deep Learning|Statistics|Research,100-180K
+Data Engineer,Technology,Bachelor's in Computer Science,2,Python|Spark|Hadoop|SQL|Data Warehousing|ETL,85-155K
+Database Administrator,Technology,Bachelor's in IT|IT Certification,2,SQL|MongoDB|Database Optimization|Linux|Backup Recovery|Security,70-130K
+Systems Administrator,Technology,Bachelor's in IT|IT Certification,2,Windows Server|Linux|Networking|Security|Active Directory|Troubleshooting,65-125K
+Network Engineer,Technology,Bachelor's in IT|Networking Certification,2,Cisco|Networking|TCP/IP|Security|Routing|Configuration,70-130K
+Cybersecurity Specialist,Technology,Bachelor's in Cybersecurity|Security Certification,3,Penetration Testing|Security Protocols|Networking|Risk Analysis|Encryption|Firewalls,85-150K
+Security Engineer,Technology,Bachelor's in Computer Science|Security Certification,3,Security Architecture|Encryption|Networking|Linux|Risk Management|Compliance,90-160K
+Mobile Developer Android,Technology,Bachelor's in Computer Science,2,Java|Kotlin|Android SDK|XML|REST API|Mobile Design,70-130K
+Mobile Developer iOS,Technology,Bachelor's in Computer Science,2,Swift|Objective-C|iOS SDK|Xcode|REST API|Mobile Design,75-135K
+Game Developer,Technology,Bachelor's in Game Development|Bachelor's in Computer Science,2,Unity|Unreal Engine|C#|C++|Game Physics|Graphics Programming,65-130K
+QA Engineer,Technology,Bachelor's in IT|QA Certification,1,Test Automation|Selenium|Manual Testing|Bug Tracking|SQL|API Testing,50-100K
+Software Architect,Technology,Master's in Computer Science,7,System Design|Architecture Patterns|Microservices|Scalability|Leadership|Multiple Languages,130-200K
+Technical Lead,Technology,Bachelor's in Computer Science,5,Leadership|Code Review|Mentoring|Architecture|Problem Solving|Communication,100-170K
+Data Analyst,Data & Analytics,Bachelor's in Mathematics|Bachelor's in Statistics,1,SQL|Python|Excel|Tableau|Data Visualization|Statistical Analysis,60-110K
+Business Analyst,Data & Analytics,Bachelor's in Business|Bachelor's in Computer Science,2,Requirements Gathering|SQL|Excel|Process Improvement|Documentation|Stakeholder Communication,65-120K
+BI Developer,Data & Analytics,Bachelor's in IT|Bachelor's in Statistics,2,Power BI|Tableau|SQL|ETL|Database Design|Data Visualization,70-130K
+BI Analyst,Data & Analytics,Bachelor's in Business|Bachelor's in IT,1,SQL|Tableau|Power BI|Excel|Data Analysis|Reporting,60-110K
+Analytics Engineer,Data & Analytics,Bachelor's in Engineering|Bachelor's in Computer Science,2,SQL|Python|dbt|Data Modeling|Analytics|Cloud Platforms,75-135K
+Accountant,Finance & Accounting,Bachelor's in Accounting|CPA or equivalent,1,Accounting Principles|QuickBooks|Excel|Financial Analysis|Tax Knowledge|GAAP,55-100K
+Financial Analyst,Finance & Accounting,Bachelor's in Finance|Bachelor's in Economics,1,Financial Modeling|Excel|Python|Statistics|Valuation|Risk Analysis,65-120K
+Investment Banking Analyst,Finance & Accounting,Master's in Finance|Bachelor's in Finance,2,Financial Modeling|Valuation|Excel|Research|Communication|M&A,100-200K
+Audit Manager,Finance & Accounting,Bachelor's in Accounting|CPA,5,Audit Procedures|Internal Controls|Risk Assessment|Leadership|Compliance|Communication,90-150K
+Tax Specialist,Finance & Accounting,Bachelor's in Accounting|CPA or Tax Certification,2,Tax Law|Tax Planning|Accounting|IRS Knowledge|Software|Compliance,65-120K
+Controller,Finance & Accounting,Master's in Finance|CPA,7,Leadership|Financial Reporting|Accounting|FP&A|Risk Management|Strategy,120-200K
+CFO,Finance & Accounting,Master's in Finance|MBA,10,Strategic Leadership|Financial Strategy|Risk Management|Board Communication|M&A|Investor Relations,150-350K
+Budget Analyst,Finance & Accounting,Bachelor's in Finance|Bachelor's in Accounting,1,Budget Planning|Forecasting|Excel|Financial Analysis|Communication|Attention to Detail,55-100K
+HR Manager,Human Resources,Bachelor's in HR|Bachelor's in Business,3,Recruitment|Employee Relations|Compensation|Compliance|Leadership|Communication,65-120K
+Talent Acquisition Specialist,Human Resources,Bachelor's in HR|Bachelor's in Business,1,Recruitment|Networking|Interviewing|Job Posting|ATS Systems|Communication,50-90K
+HR Business Partner,Human Resources,Bachelor's in HR|Master's in Business,4,Strategic HR|Business Acumen|Employee Relations|Coaching|Data Analysis|Leadership,75-130K
+Training Specialist,Human Resources,Bachelor's in HR|Bachelor's in Education,1,Training Program Development|Presentation|eLearning|Assessment|Communication|Instructional Design,55-95K
+Learning & Development Manager,Human Resources,Master's in Education|Bachelor's in HR,4,Curriculum Development|Leadership|Training Design|E-Learning|Coaching|Project Management,70-125K
+Compensation & Benefits Manager,Human Resources,Bachelor's in HR|Bachelor's in Finance,3,Compensation Strategy|Benefits Administration|Excel|Market Analysis|Compliance|Communication,70-125K
+HR Operations Manager,Human Resources,Bachelor's in HR|Bachelor's in Business,3,HR Systems|Process Management|Compliance|Data Analysis|Leadership|Problem Solving,65-115K
+Chief People Officer,Human Resources,Master's in Business|MBA,10,Strategic Leadership|Organizational Development|Culture Building|Change Management|Executive Communication|Vision Setting,130-250K
+Marketing Manager,Marketing & Sales,Bachelor's in Marketing|Bachelor's in Business,3,Campaign Management|Brand Strategy|Analytics|Budget Management|Leadership|Communication,65-120K
+Digital Marketing Manager,Marketing & Sales,Bachelor's in Marketing|Digital Marketing Certification,2,SEO|SEM|Social Media|Analytics|Content Strategy|Email Marketing,60-110K
+SEO Specialist,Marketing & Sales,Bachelor's in Marketing|SEO Certification,1,SEO|Keyword Research|Technical SEO|Analytics|Content Optimization|Backlink Strategy,50-90K
+Content Marketing Manager,Marketing & Sales,Bachelor's in Marketing|Bachelor's in Communications,2,Content Strategy|Writing|SEO|Analytics|Project Management|Research,55-100K
+Social Media Manager,Marketing & Sales,Bachelor's in Marketing|Bachelor's in Communications,1,Social Media Strategy|Content Creation|Community Management|Analytics|Copywriting|Platform Knowledge,45-85K
+Email Marketing Specialist,Marketing & Sales,Bachelor's in Marketing,1,Email Campaign Management|Segmentation|A/B Testing|Analytics|Copywriting|Automation Platforms,50-90K
+Product Manager,Marketing & Sales,Bachelor's in Business|Master's in Business,3,Product Strategy|Market Analysis|User Research|Data Analysis|Leadership|Communication,90-160K
+Product Marketing Manager,Marketing & Sales,Bachelor's in Marketing|Bachelor's in Business,2,Product Strategy|Market Research|Positioning|Messaging|Campaign Management|Analytics,75-130K
+Sales Manager,Marketing & Sales,Bachelor's in Business|Bachelor's in Sales,3,Sales Strategy|Team Leadership|CRM|Negotiation|Target Setting|Communication,70-130K
+Sales Executive,Marketing & Sales,Bachelor's in Business|Bachelor's in Marketing,1,Selling|Negotiation|Client Relationships|CRM|Product Knowledge|Communication,50-100K
+Account Executive,Marketing & Sales,Bachelor's in Business|Bachelor's in Communications,1,Account Management|Sales|Relationship Building|CRM|Negotiation|Product Knowledge,55-105K
+Business Development Manager,Marketing & Sales,Bachelor's in Business|Master's in Business,3,Business Development Strategy|Networking|Sales|Negotiation|Market Analysis|Communication,70-130K
+Marketing Director,Marketing & Sales,Master's in Marketing|MBA,7,Strategic Marketing|Leadership|Budget Management|Brand Strategy|Analytics|Team Management,110-190K
+Chief Marketing Officer,Marketing & Sales,MBA|Master's in Marketing,10,Strategic Leadership|Brand Vision|Executive Communication|P&L Management|Market Strategy|Team Leadership,150-300K
+CMO,Marketing & Sales,MBA,10,Strategic Leadership|Brand Management|Executive Communication|Market Intelligence|Digital Transformation|Vision,150-300K
+Operations Manager,Operations & Supply Chain,Bachelor's in Operations Management|Bachelor's in Business,3,Process Management|Efficiency Optimization|Leadership|Quality Control|Project Management|Data Analysis,65-120K
+Supply Chain Manager,Operations & Supply Chain,Bachelor's in Supply Chain Management|Bachelor's in Logistics,3,Supply Chain Strategy|Procurement|Vendor Management|Forecasting|Inventory Management|Analytics,70-130K
+Logistics Manager,Operations & Supply Chain,Bachelor's in Logistics|Bachelor's in Business,2,Logistics Planning|Distribution|Fleet Management|Cost Optimization|Supplier Management|Software,60-115K
+Warehouse Manager,Operations & Supply Chain,Bachelor's in Logistics|High School with experience,2,Warehouse Management|Inventory Control|Staff Management|Safety|Organization|Problem Solving,55-95K
+Quality Assurance Manager,Operations & Supply Chain,Bachelor's in Engineering|Quality Certification,3,Quality Management|Process Improvement|Statistical Analysis|Compliance|Leadership|Problem Solving,65-120K
+Process Improvement Manager,Operations & Supply Chain,Bachelor's in Engineering|Bachelor's in Business,3,Lean Manufacturing|Six Sigma|Process Analysis|Data Analysis|Leadership|Change Management,68-125K
+Procurement Manager,Operations & Supply Chain,Bachelor's in Business|Bachelor's in Supply Chain,3,Procurement Strategy|Vendor Management|Negotiation|Cost Analysis|Compliance|Strategic Sourcing,70-130K
+Demand Planner,Operations & Supply Chain,Bachelor's in Operations|Bachelor's in Analytics,2,Demand Forecasting|Statistical Analysis|ERP Systems|Supply Planning|Data Analysis|Excel,60-110K
+Production Manager,Operations & Supply Chain,Bachelor's in Engineering|Bachelor's in Operations,3,Production Planning|Staff Management|Quality Control|Equipment Maintenance|Safety|Problem Solving,65-120K
+Mechanical Engineer,Engineering & Manufacturing,Bachelor's in Mechanical Engineering,1,CAD|Mechanical Design|Physics|Thermodynamics|Problem Solving|Technical Documentation,65-125K
+Civil Engineer,Engineering & Manufacturing,Bachelor's in Civil Engineering,2,CAD|Project Management|Structural Analysis|Building Codes|AutoCAD|Technical Design,65-125K
+Electrical Engineer,Engineering & Manufacturing,Bachelor's in Electrical Engineering,2,Circuit Design|Electrical Systems|CAD|Power Systems|Troubleshooting|Technical Knowledge,70-130K
+Electronics Engineer,Engineering & Manufacturing,Bachelor's in Electronics Engineering,1,Circuit Design|Embedded Systems|Microcontrollers|CAD|Hardware Design|PCB Design,65-120K
+Embedded Systems Engineer,Engineering & Manufacturing,Bachelor's in Electronics Engineering|Bachelor's in Computer Engineering,2,C/C++|Embedded Linux|Hardware|Microcontrollers|Real-time Systems|Low-level Programming,70-130K
+Chemical Engineer,Engineering & Manufacturing,Bachelor's in Chemical Engineering,2,Chemical Processes|Safety|Data Analysis|Thermochemistry|Process Design|Laboratory Skills,70-135K
+Manufacturing Engineer,Engineering & Manufacturing,Bachelor's in Manufacturing Engineering|Bachelor's in Mechanical Engineering,2,Process Design|CAD|Production Planning|Quality Control|Problem Solving|Equipment Knowledge,65-120K
+Automotive Engineer,Engineering & Manufacturing,Bachelor's in Automotive Engineering|Bachelor's in Mechanical Engineering,2,CAD|Vehicle Systems|Thermal Systems|Materials|Testing|Problem Solving,70-130K
+Aerospace Engineer,Engineering & Manufacturing,Bachelor's in Aerospace Engineering,2,CAD|Aerodynamics|Structural Analysis|MATLAB|Physics|Design,75-140K
+Environmental Engineer,Engineering & Manufacturing,Bachelor's in Environmental Engineering,2,Environmental Assessment|Regulations|Water Systems|Waste Management|Sustainability|Analysis,65-125K
+Structural Engineer,Engineering & Manufacturing,Bachelor's in Civil Engineering,3,Structural Analysis|CAD|Building Codes|Materials|Calculations|Design,70-135K
+Project Engineer,Engineering & Manufacturing,Bachelor's in Engineering,2,Project Management|Technical Knowledge|Documentation|Coordination|Problem Solving|Communication,65-120K
+Project Manager,Construction & Real Estate,Bachelor's in Project Management|Bachelor's in Business,3,Project Management|Budget Control|Timeline Management|Team Leadership|Risk Management|Communication,70-130K
+Construction Manager,Construction & Real Estate,Bachelor's in Construction Management,3,Project Management|Construction Knowledge|Safety|Budget Control|Contractor Management|Compliance,75-140K
+Real Estate Agent,Construction & Real Estate,High School|Real Estate License,0,Sales|Customer Service|Marketing|Negotiation|Property Knowledge|Communication,40-100K
+Real Estate Broker,Construction & Real Estate,Bachelor's in Business|Broker License,5,Sales Leadership|Real Estate Knowledge|Negotiation|Business Development|Team Management|Communication,75-180K
+Architect,Construction & Real Estate,Master's in Architecture|Architecture License,3,Architectural Design|CAD|Building Codes|Creativity|Technical Knowledge|Client Communication,75-140K
+Landscape Architect,Construction & Real Estate,Bachelor's in Landscape Architecture,2,Design|CAD|Horticulture|Environmental Knowledge|Creativity|Technical Skills,60-120K
+Teacher,Education & Training,Bachelor's in Education|Teaching Credential,0,Instruction|Curriculum Development|Student Assessment|Communication|Classroom Management|Patience,40-80K
+College Professor,Education & Training,Master's or PhD in subject area,3,Research|Teaching|Publication|Mentoring|Subject Matter Expertise|Communication,65-140K
+Training Manager,Education & Training,Bachelor's in Education|Training Certification,3,Program Design|Leadership|Instruction|Evaluation|Curriculum Development|Communication,65-115K
+Instructional Designer,Education & Training,Bachelor's in Education|Master's in Instructional Design,2,Course Development|Adult Learning|Technology|E-Learning|Assessment|Creativity,60-110K
+School Principal,Education & Training,Master's in Education|Administrative Certificate,5,Educational Leadership|Management|Budgeting|Staff Management|Community Relations|Vision,75-125K
+Academic Advisor,Education & Training,Bachelor's in Education|Bachelor's in Counseling,1,Academic Planning|Student Support|Counseling|Communication|Problem Solving|Organization,45-80K
+Nurse,Healthcare,Bachelor's in Nursing|RN License,0,Patient Care|Medical Knowledge|Communication|Critical Thinking|Compassion|Attention to Detail,60-100K
+Registered Nurse,Healthcare,Bachelor's in Nursing|RN License,1,Nursing Care|Patient Monitoring|Medical Records|Communication|Critical Thinking|Clinical Skills,65-110K
+Nursing Manager,Healthcare,Master's in Nursing|RN License,5,Nursing Leadership|Staff Management|Patient Safety|Budget Management|Communication|Clinical Knowledge,85-140K
+Physician,Healthcare,Medical Degree|License to Practice,3,Medical Knowledge|Diagnosis|Treatment|Patient Communication|Decision Making|Empathy,180-300K
+Surgeon,Healthcare,Medical Degree|Surgical Specialty Training|License,5,Surgical Expertise|Precision|Problem Solving|Patient Care|Research|Technical Skills,250-500K
+Pharmacist,Healthcare,Doctor of Pharmacy|Pharmacy License,1,Pharmacy Knowledge|Patient Counseling|Drug Interactions|Attention to Detail|Communication|Accuracy,110-160K
+Physical Therapist,Healthcare,Doctor of Physical Therapy|PT License,1,Physical Therapy|Patient Assessment|Exercise Prescription|Communication|Anatomy Knowledge|Compassion,85-140K
+Occupational Therapist,Healthcare,Master's in Occupational Therapy|OT License,1,Occupational Therapy|Patient Assessment|Treatment Planning|Communication|Problem Solving|Empathy,80-130K
+Medical Technologist,Healthcare,Bachelor's in Medical Technology|Certification,1,Lab Testing|Quality Control|Analysis|Attention to Detail|Equipment Operation|Accuracy,55-95K
+Healthcare Administrator,Healthcare,Master's in Healthcare Administration,3,Healthcare Management|Budget Control|Leadership|Compliance|Strategic Planning|Communication,85-150K
+Clinical Lab Scientist,Healthcare,Bachelor's in Clinical Laboratory Science,1,Laboratory Analysis|Quality Control|Equipment Maintenance|Data Analysis|Attention to Detail|Safety,60-110K
+Radiographer,Healthcare,Associate in Radiography|Radiography License,1,Imaging Technology|Patient Care|Radiation Safety|Technical Skills|Communication|Attention to Detail,60-105K
+Dentist,Healthcare,Doctor of Dental Surgery|Dental License,1,Dental Procedures|Patient Communication|Diagnosis|Attention to Detail|Compassion|Clinical Skills,150-200K
+Psychologist,Healthcare,Master's or PhD in Psychology,2,Psychological Assessment|Counseling|Research|Patient Communication|Critical Thinking|Empathy,70-130K
+Psychiatrist,Healthcare,Medical Degree|Psychiatry Residency|License,5,Psychiatric Diagnosis|Treatment Planning|Patient Communication|Medical Knowledge|Problem Solving|Empathy,200-350K
+Graphic Designer,Creative & Design,Bachelor's in Graphic Design|Design Certification,1,Design Software|Creativity|Visual Communication|Adobe Creative Suite|Branding|Attention to Detail,50-100K
+UX Designer,Creative & Design,Bachelor's in Design|UX Certification,2,User Research|Wireframing|Prototyping|Usability Testing|Design Thinking|Communication,70-130K
+UI Designer,Creative & Design,Bachelor's in Design|UI Certification,1,Visual Design|Prototyping Tools|Design Systems|UI Principles|Figma|Creativity,65-120K
+Web Designer,Creative & Design,Bachelor's in Design|Web Design Certification,1,Web Design|HTML/CSS|Design Tools|User Experience|Responsive Design|Creativity,55-110K
+Video Editor,Creative & Design,Associate in Film/Video|Certification,1,Video Editing Software|Storytelling|Color Grading|Audio Editing|Creativity|Attention to Detail,50-100K
+Animator,Creative & Design,Bachelor's in Animation|Animation Certification,1,Animation Software|Creativity|Storytelling|Drawing|Timing|Technical Skills,55-110K
+3D Artist,Creative & Design,Bachelor's in 3D Art|Certification,1,3D Modeling|Texturing|Rendering|Software Skills|Creativity|Problem Solving,55-110K
+Creative Director,Creative & Design,Bachelor's in Design|Master's in Creative Fields,5,Creative Vision|Leadership|Communication|Design Knowledge|Strategic Thinking|Team Management,90-160K
+Art Director,Creative & Design,Bachelor's in Art|Bachelor's in Design,3,Artistic Direction|Visual Communication|Team Leadership|Design Principles|Communication|Creativity,70-130K
+Photographer,Creative & Design,Associate in Photography|Portfolio,0,Photography|Editing Software|Lighting|Composition|Client Service|Creativity,40-90K
+Copywriter,Creative & Design,Bachelor's in English|Bachelor's in Marketing,1,Writing|Creativity|SEO Knowledge|Marketing|Brand Voice|Research,50-95K
+Journalist,Entertainment & Media,Bachelor's in Journalism|Bachelor's in Communications,1,Writing|Reporting|Research|Communication|Ethics|Source Development,45-80K
+Producer,Entertainment & Media,Bachelor's in Production|Bachelor's in Communications,2,Production Management|Leadership|Technical Knowledge|Problem Solving|Communication|Creativity,60-120K
+Director,Private Sector Management,Bachelor's in Business|Master's in Business,5,Strategic Planning|Leadership|Department Management|Budget Control|Decision Making|Communication,100-180K
+Writer,Entertainment & Media,Bachelor's in Creative Writing|Bachelor's in Literature,0,Writing|Storytelling|Research|Creativity|Communication|Attention to Detail,40-80K
+Editor,Entertainment & Media,Bachelor's in English|Bachelor's in Journalism,2,Content Editing|Writing|Organization|Attention to Detail|Communication|Management,55-100K
+Sound Engineer,Entertainment & Media,Associate in Audio Engineering|Certification,1,Audio Engineering|Sound Design|Technical Skills|Equipment Knowledge|Problem Solving|Precision,50-100K
+Broadcast Technician,Entertainment & Media,Associate in Broadcast Technology,1,Broadcasting|Equipment Operation|Technical Knowledge|Troubleshooting|Safety|Attention to Detail,45-85K
+Lawyer,Legal Services,Juris Doctor|Bar License,1,Legal Knowledge|Research|Writing|Negotiation|Communication|Ethics,80-200K
+Paralegal,Legal Services,Bachelor's in Paralegal Studies|Associate in Law,1,Legal Research|Document Preparation|Organization|Communication|Attention to Detail|Legal Knowledge,50-90K
+Legal Secretary,Legal Services,High School|Legal Secretary Certification,0,Legal Knowledge|Administrative Skills|Organization|Communication|Typing|Attention to Detail,40-70K
+Law Clerk,Legal Services,Juris Doctor|Law School Graduate,0,Legal Research|Writing|Analysis|Attention to Detail|Communication|Problem Solving,50-85K
+Judge,Legal Services,Juris Doctor|Bar License|Judicial Appointment,10,Legal Expertise|Decision Making|Ethics|Fairness|Communication|Leadership,150-250K
+Corporate Lawyer,Legal Services,Juris Doctor|Bar License|Corporate Law Specialization,3,Corporate Law|Contract Negotiation|Research|Writing|Strategic Thinking|Communication,120-300K
+Patent Attorney,Legal Services,Juris Doctor|Patent Bar License,3,Patent Law|Technical Knowledge|Research|Writing|Communication|Legal Expertise,130-280K
+Tax Attorney,Legal Services,Juris Doctor|Bar License|Tax Law Specialization,3,Tax Law|Legal Research|Planning|Writing|Communication|Analytical Skills,110-250K
+Management Consultant,Consulting,Master's in Business|MBA,2,Business Analysis|Problem Solving|Communication|Research|Strategic Thinking|Project Management,90-180K
+Strategy Consultant,Consulting,MBA|Master's in Strategy,3,Strategic Thinking|Analysis|Communication|Market Knowledge|Problem Solving|Leadership,100-200K
+Business Consultant,Consulting,Bachelor's in Business|MBA,2,Business Analysis|Process Improvement|Communication|Problem Solving|Data Analysis|Project Management,80-150K
+IT Consultant,Consulting,Bachelor's in Computer Science|IT Certification,3,IT Knowledge|Problem Solving|Communication|System Design|Project Management|Technical Expertise,90-160K
+HR Consultant,Consulting,Bachelor's in HR|Master's in Business,3,HR Expertise|Organizational Development|Communication|Problem Solving|Strategic Thinking|Analysis,85-155K
+Customer Service Representative,Sales & Customer Service,High School|Customer Service Certification,0,Customer Service|Communication|Problem Solving|Patience|Product Knowledge|Attention to Detail,30-55K
+Customer Success Manager,Sales & Customer Service,Bachelor's in Business|Customer Success Certification,2,Customer Relations|Account Management|Problem Solving|Communication|Product Knowledge|Analytics,60-110K
+Call Center Manager,Sales & Customer Service,High School|Management Experience,2,Team Management|Customer Service|Leadership|Performance Metrics|Problem Solving|Communication,50-90K
+Technical Support Specialist,Sales & Customer Service,High School|IT Certification,1,Technical Knowledge|Troubleshooting|Communication|Customer Service|Problem Solving|Patience,40-75K
+Research Scientist,Research & Development,Master's in Science|PhD,2,Research|Scientific Knowledge|Experimentation|Data Analysis|Writing|Problem Solving,80-150K
+Product Researcher,Research & Development,Bachelor's in Science|Master's in Research,2,Research Methodology|Data Analysis|User Research|Report Writing|Problem Solving|Communication,70-130K
+Laboratory Manager,Research & Development,Master's in Science|Bachelor's in Laboratory Science,3,Laboratory Management|Scientific Knowledge|Leadership|Safety|Equipment Maintenance|Quality Control,75-130K
+Administrative Assistant,Administration,High School|Administrative Certification,0,Administrative Skills|Organization|Communication|Time Management|Typing|Software Skills,35-60K
+Executive Assistant,Administration,Bachelor's in Business|Administrative Certification,2,Executive Support|Organization|Communication|Discretion|Problem Solving|Leadership Support,55-95K
+Office Manager,Administration,High School|Leadership Experience,2,Office Management|Leadership|Organization|Communication|Problem Solving|Administrative Skills,50-85K
+Receptionist,Administration,High School,0,Customer Service|Communication|Organization|Phone Skills|Computer Skills|Friendliness,30-55K
+Chief Executive Officer,Private Sector Management,MBA|Master's in Business,10,Strategic Leadership|Vision|Decision Making|Business Acumen|Communication|Executive Management,200-500K
+COO,Private Sector Management,MBA|Master's in Business,10,Operations Management|Strategic Thinking|Leadership|Business Operations|Decision Making|Communication,180-400K
+Vice President,Private Sector Management,Master's in Business|MBA,7,Strategic Leadership|Department Management|Business Development|Decision Making|Communication|Vision,140-300K
+General Manager,Private Sector Management,Bachelor's in Business|Master's in Business,5,Business Management|Leadership|P&L Responsibility|Strategic Planning|Decision Making|Communication,90-170K
+Government Analyst,Government & Public Service,Bachelor's in Political Science|Bachelor's in Public Administration,1,Policy Analysis|Research|Writing|Data Analysis|Government Knowledge|Communication,55-95K
+Public Administrator,Government & Public Service,Master's in Public Administration|MPA,2,Public Administration|Leadership|Policy Knowledge|Budget Management|Strategic Planning|Communication,65-120K
+Policy Advisor,Government & Public Service,Master's in Public Policy|Master's in Relevant Field,3,Policy Expertise|Analysis|Writing|Research|Strategic Thinking|Communication,75-140K
+Electrical Utilities Manager,Energy & Utilities,Bachelor's in Electrical Engineering|Engineering License,3,Electrical Systems|Management|Safety|Regulatory Knowledge|Problem Solving|Leadership,85-145K
+Water Treatment Operator,Energy & Utilities,Certificate in Water Treatment|High School,1,Water Treatment|Equipment Operation|Safety|Testing|Compliance|Maintenance,50-85K
+Safety Engineer,Energy & Utilities,Bachelor's in Safety Engineering|Safety Certification,2,Safety Management|Risk Assessment|Regulatory Knowledge|Problem Solving|Communication|Leadership,70-130K
+Agricultural Engineer,Agriculture & Food,Bachelor's in Agricultural Engineering,2,Agricultural Systems|Equipment Design|Problem Solving|Technical Knowledge|Sustainability|Analysis,60-115K
+Food Scientist,Agriculture & Food,Bachelor's in Food Science|Master's in Food Science,2,Food Science|Research|Testing|Quality Control|Problem Solving|Technical Knowledge,65-125K
+Nutritionist,Agriculture & Food,Bachelor's in Nutrition|Nutritionist Certification,1,Nutrition Science|Meal Planning|Client Communication|Research|Health Knowledge|Counseling,55-100K
+Chef,Agriculture & Food,Culinary School|Culinary Certification,1,Cooking|Recipe Development|Kitchen Management|Creativity|Food Safety|Time Management,50-100K
+Restaurant Manager,Agriculture & Food,High School|Management Experience,2,Restaurant Management|Leadership|Customer Service|Financial Management|Staff Management|Communication,50-90K
+Hotel Manager,Hospitality & Tourism,Bachelor's in Hospitality Management,3,Hotel Management|Leadership|Customer Service|Budget Control|Staff Management|Communication,60-110K
+Event Coordinator,Hospitality & Tourism,Associate in Event Planning|Certification,1,Event Planning|Organization|Communication|Problem Solving|Vendor Management|Budget Management,45-85K
+Travel Agent,Hospitality & Tourism,High School|Travel Industry Certification,0,Travel Knowledge|Customer Service|Sales|Computer Skills|Organization|Communication,35-70K
+Tour Guide,Hospitality & Tourism,High School|Language Skills,0,Communication|Regional Knowledge|Customer Service|Cultural Sensitivity|Problem Solving|Enthusiasm,30-60K
+Sports Manager,Sports & Recreation,Bachelor's in Sports Management,2,Sports Management|Leadership|Marketing|Financial Management|Problem Solving|Communication,60-120K
+Coach,Sports & Recreation,Bachelor's in Physical Education|Coaching Certification,1,Athletic Knowledge|Coaching|Leadership|Communication|Motivation|Training Program Design,40-90K
+Personal Trainer,Sports & Recreation,Personal Training Certification|High School,0,Fitness Knowledge|Training Program Design|Motivation|Communication|Anatomy|Problem Solving,35-80K
+Fitness Manager,Sports & Recreation,Associate in Fitness Management|High School,2,Fitness Industry Knowledge|Management|Customer Service|Sales|Leadership|Communication,50-90K
+Truck Driver,Transportation & Logistics,High School|Commercial Driver's License,0,Driving|Safety|Route Planning|Vehicle Maintenance|Time Management|Responsibility,40-70K
+Delivery Driver,Transportation & Logistics,High School|Driver's License,0,Driving|Customer Service|Organization|Time Management|Safety|Communication,35-65K
+Fleet Manager,Transportation & Logistics,High School|Management Experience,3,Fleet Management|Maintenance|Safety|Cost Management|Leadership|Problem Solving,60-110K
+Pilot,Transportation & Logistics,Commercial Pilot License|Training,2,Flying|Navigation|Safety|Technical Knowledge|Decision Making|Responsibility,100-200K
+Social Worker,Human Services & Social Work,Master's in Social Work|MSW License,1,Case Management|Counseling|Problem Solving|Communication|Empathy|Crisis Intervention,45-85K
+Counselor,Human Services & Social Work,Master's in Counseling|Licensing Credentials,1,Counseling|Active Listening|Problem Solving|Empathy|Communication|Treatment Planning,50-95K
+Community Outreach Coordinator,Human Services & Social Work,Bachelor's in Social Work|Bachelor's in Communications,1,Community Engagement|Program Management|Communication|Organization|Problem Solving|Cultural Sensitivity,45-80K
+Grant Writer,Non-profit & Charity,Bachelor's in Writing|Grant Writing Certification,1,Grant Writing|Research|Communication|Organization|Problem Solving|Fundraising Knowledge,50-90K
+Non-profit Director,Non-profit & Charity,Master's in Non-profit Management|Master's in Business,5,Non-profit Leadership|Fundraising|Strategic Planning|Budget Management|Communication|Vision,70-130K
+Fundraiser,Non-profit & Charity,Bachelor's in Communications|Fundraising Certification,1,Fundraising|Relationship Building|Communication|Sales|Problem Solving|Event Planning,50-100K
+Environmental Scientist,Environmental,Bachelor's in Environmental Science|Master's in Environmental Science,1,Environmental Science|Research|Analysis|Problem Solving|Technical Knowledge|Sustainability,60-120K
+Sustainability Consultant,Environmental,Bachelor's in Environmental Science|MBA,2,Sustainability Strategy|Environmental Knowledge|Business Acumen|Communication|Problem Solving|Analysis,70-140K
+Content Creator,Media Production,High School|Digital Media Skills,0,Content Creation|Social Media|Video Production|Creativity|Communication|Technical Skills,30-80K
+Social Media Content Creator,Media Production,High School|Social Media Certification,0,Social Media|Content Creation|Photography/Videography|Analytics|Creativity|Communication,35-85K
+Videographer,Media Production,Associate in Videography|Certification,1,Video Shooting|Editing|Lighting|Storytelling|Technical Skills|Creativity,45-95K
+Blockchain Developer,Technology,Bachelor's in Computer Science|Blockchain Certification,2,Solidity|Cryptocurrency|Smart Contracts|Blockchain Technology|Python|Problem Solving,100-200K
+AI/ML Specialist,Technology,Master's in AI|Master's in Machine Learning,2,Artificial Intelligence|Deep Learning|Python|TensorFlow|Research|Problem Solving,110-200K
+IoT Engineer,Technology,Bachelor's in Electronics|Bachelor's in Computer Engineering,2,IoT Technology|Embedded Systems|Networking|C/C++|Sensors|System Design,85-150K
+AR/VR Developer,Technology,Bachelor's in Computer Science|Specialized Training,2,Unity|Unreal Engine|C#|3D Graphics|AR/VR Platforms|Problem Solving,90-160K
+DevSecOps Engineer,Technology,Bachelor's in Computer Science|Security Certification,3,DevOps|Security|CI/CD|Container Security|Compliance|Linux,110-180K
+Solution Architect,Technology,Master's in Computer Science|Architecture Certification,5,Solution Design|System Architecture|Technical Expertise|Communication|Business Acumen|Leadership,120-200K
+Enterprise Architect,Technology,Master's in Computer Science|Enterprise Architecture Certification,7,Enterprise Architecture|Strategic Design|Leadership|Communication|Technical Expertise|Vision,140-240K
+React Developer,Technology,Bachelor's in Computer Science|Bootcamp,1,JavaScript|React|CSS|HTML|Redux|API Integration,65-120K
+Vue Developer,Technology,Bachelor's in Computer Science,1,JavaScript|Vue.js|CSS|HTML|Vuex|API Integration,60-115K
+Angular Developer,Technology,Bachelor's in Computer Science,2,JavaScript|Angular|TypeScript|CSS|RxJS|API Integration,70-130K
+PHP Developer,Technology,Bachelor's in Computer Science,1,PHP|Laravel|Symfony|MySQL|API Development|HTML/CSS,55-105K
+Python Developer,Technology,Bachelor's in Computer Science,1,Python|Django|Flask|SQL|REST API|Problem Solving,65-120K
+Ruby Developer,Technology,Bachelor's in Computer Science,1,Ruby|Ruby on Rails|SQL|HTML/CSS|API Development|Problem Solving,65-125K
+Go Developer,Technology,Bachelor's in Computer Science,2,Go|Microservices|API Development|Concurrency|Docker|Problem Solving,80-140K
+Rust Developer,Technology,Bachelor's in Computer Science,2,Rust|System Programming|Memory Safety|Cargo|Problem Solving|Performance Optimization,85-150K
+Java Backend Developer,Technology,Bachelor's in Computer Science,2,Java|Spring Boot|SQL|REST API|Microservices|Maven,75-135K
+C++ Developer,Technology,Bachelor's in Computer Science,2,C++|System Programming|Memory Management|Problem Solving|Debugging|Performance,75-135K
+C# Developer,Technology,Bachelor's in Computer Science,1,C#|.NET Framework|SQL|Azure|API Development|LINQ,70-130K
+Scala Developer,Technology,Bachelor's in Computer Science,2,Scala|Functional Programming|Apache Spark|SQL|Problem Solving|Big Data,80-140K
+Perl Developer,Technology,Bachelor's in Computer Science,2,Perl|Text Processing|Scripting|Regular Expressions|Problem Solving|System Administration,70-125K
+Shell Script Developer,Technology,Bachelor's in Computer Science,1,Shell Scripting|Linux|Automation|Bash|System Administration|Problem Solving,60-110K
+Elixir Developer,Technology,Bachelor's in Computer Science,2,Elixir|Phoenix Framework|Functional Programming|Erlang|Distributed Systems|Problem Solving,80-140K
+Clojure Developer,Technology,Bachelor's in Computer Science,2,Clojure|Functional Programming|Java Interop|LispyScript|Problem Solving|Concurrency,80-140K
+Haskell Developer,Technology,Bachelor's in Computer Science,2,Haskell|Functional Programming|Type System|Problem Solving|Concurrency|Lambda Calculus,80-140K
+TypeScript Developer,Technology,Bachelor's in Computer Science,1,TypeScript|JavaScript|Node.js|Type Safety|Object-Oriented Design|Problem Solving,70-130K
+Kotlin Developer,Technology,Bachelor's in Computer Science,1,Kotlin|Android Development|Java Interop|Coroutines|Problem Solving|Mobile Development,70-130K
+Swift Developer,Technology,Bachelor's in Computer Science,1,Swift|iOS Development|Xcode|UI/UX|Problem Solving|Mobile Development,75-135K
+R Programmer,Data & Analytics,Bachelor's in Statistics|Bachelor's in Mathematics,1,R|Statistical Analysis|Data Visualization|tidyverse|ggplot2|Problem Solving,65-120K
+MATLAB Developer,Technology,Bachelor's in Engineering|Bachelor's in Physics,1,MATLAB|Numerical Analysis|Signal Processing|Simulink|Problem Solving|Mathematics,70-130K
+Jupyter Developer,Data & Analytics,Bachelor's in Computer Science|Data Science Certificate,1,Jupyter Notebooks|Python|Data Analysis|Visualization|Documentation|Collaboration,65-120K
+Oracle DBA,Technology,Bachelor's in IT|Oracle Certification,3,Oracle Database|SQL|Database Administration|Performance Tuning|Backup Recovery|Security,80-145K
+MongoDB Developer,Technology,Bachelor's in Computer Science,2,MongoDB|NoSQL|JSON|JavaScript|Aggregation|Indexing,75-135K
+Cassandra Developer,Technology,Bachelor's in Computer Science,2,Cassandra|NoSQL|Distributed Systems|CQL|Scalability|Performance,80-145K
+Redis Developer,Technology,Bachelor's in Computer Science,2,Redis|Caching|Data Structures|Pub/Sub|Performance Optimization|Scalability,80-140K
+Elasticsearch Developer,Technology,Bachelor's in Computer Science,2,Elasticsearch|Search Technology|Analytics|Query DSL|Kibana|Performance,80-140K
+Kafka Developer,Technology,Bachelor's in Computer Science,2,Apache Kafka|Streaming|Event Processing|Distributed Systems|Scalability|Problem Solving,85-150K
+Spark Developer,Data & Analytics,Bachelor's in Computer Science,2,Apache Spark|Big Data|Python|Scala|Distributed Computing|SQL,85-150K
+Hadoop Developer,Data & Analytics,Bachelor's in Computer Science,2,Hadoop|HDFS|MapReduce|Big Data|Java|Distributed Computing,85-150K
+Data Warehouse Architect,Data & Analytics,Master's in IT|Data Warehouse Certification,5,Data Warehouse Design|ETL|SQL|Dimensional Modeling|Performance Tuning|Strategic Planning,110-180K
+ETL Developer,Data & Analytics,Bachelor's in IT,2,ETL Tools|SQL|Data Integration|Data Quality|Problem Solving|Performance,70-130K
+Talend Developer,Data & Analytics,Bachelor's in IT,2,Talend|ETL|Data Integration|Java|SQL|Data Quality,75-135K
+Informatica Developer,Data & Analytics,Bachelor's in IT,2,Informatica|ETL|Data Integration|SQL|Data Quality|Performance Tuning,75-135K
+SAS Programmer,Data & Analytics,Bachelor's in Statistics|SAS Certification,1,SAS|Statistical Analysis|Data Management|Visualization|SQL|Problem Solving,70-130K
+Power BI Developer,Data & Analytics,Bachelor's in IT,1,Power BI|Data Visualization|DAX|SQL|Excel|Dashboard Development,65-125K
+Looker Developer,Data & Analytics,Bachelor's in IT,2,Looker|Data Visualization|LookML|SQL|Analytics|Dashboard Development,75-135K
+Qlik Developer,Data & Analytics,Bachelor's in IT,2,Qlik Sense|Qlik View|Data Visualization|SQL|Analytics|Dashboard Development,75-135K
+Tableau Specialist,Data & Analytics,Bachelor's in IT|Tableau Certification,1,Tableau|Data Visualization|SQL|Analytics|Dashboard Design|Communication,65-120K
+Salesforce Developer,Technology,Bachelor's in Computer Science|Salesforce Certification,2,Salesforce|Apex|VisualForce|Lightning|CRM|Problem Solving,80-150K
+Salesforce Administrator,Technology,Bachelor's in IT|Salesforce Admin Certification,1,Salesforce|Administration|Configuration|User Management|Data Management|Support,60-110K
+SAP Developer,Technology,Bachelor's in IT|SAP Certification,2,SAP|ABAP|Enterprise Systems|SQL|Problem Solving|Configuration,85-150K
+Oracle Applications Developer,Technology,Bachelor's in IT|Oracle Certification,2,Oracle Apps|PL/SQL|ERP Systems|SQL|Problem Solving|Configuration,80-145K
+Shopify Developer,Technology,Bachelor's in Computer Science,1,Shopify|Liquid|JavaScript|API Integration|E-commerce|Problem Solving,70-130K
+WordPress Developer,Technology,High School|WordPress Certification,1,WordPress|PHP|JavaScript|CSS|Plugin Development|Theme Development,55-110K
+Drupal Developer,Technology,Bachelor's in Computer Science,2,Drupal|PHP|JavaScript|MySQL|Theme Development|Module Development,70-130K
+Magento Developer,Technology,Bachelor's in Computer Science,2,Magento|PHP|JavaScript|E-commerce|MySQL|Problem Solving,75-135K
+Joomla Developer,Technology,Bachelor's in Computer Science,1,Joomla|PHP|JavaScript|CMS|MySQL|Theme Development,60-115K
+Cybersecurity Analyst,Technology,Bachelor's in Cybersecurity|Security+ Certification,1,Threat Analysis|Vulnerability Assessment|Security Systems|Log Analysis|Incident Response|Risk Assessment,70-130K
+Ethical Hacker,Technology,Bachelor's in Cybersecurity|CEH Certification,3,Penetration Testing|Hacking Tools|Networking|Security|Problem Solving|Vulnerability Research,90-160K
+SOC Analyst,Technology,Bachelor's in Cybersecurity|Security Certification,1,SIEM|Threat Detection|Incident Response|Log Analysis|Security Protocols|Communication,65-120K
+Privacy Officer,Technology,Master's in Law|Privacy Certification,3,Privacy Law|GDPR|Compliance|Risk Management|Communication|Strategic Planning,85-150K
+Compliance Officer,Technology,Bachelor's in Business|Compliance Certification,3,Compliance|Regulations|Auditing|Risk Management|Documentation|Communication,80-145K
+IT Help Desk Technician,Technology,High School|CompTIA A+ Certification,0,Technical Support|Troubleshooting|Hardware|Software|Customer Service|Communication,35-65K
+IT Field Technician,Technology,High School|IT Certification,1,Hardware Installation|Troubleshooting|Networking|Customer Service|Problem Solving|Documentation,45-80K
+Website Administrator,Technology,Bachelor's in IT,1,Website Management|CMS|Server Administration|HTML/CSS|Database Management|Troubleshooting,50-90K
+Technical Writer,Technology,Bachelor's in English|Technical Writing Certification,1,Technical Writing|Documentation|API Documentation|Communication|Organization|Problem Solving,50-100K
+Solutions Engineer,Technology,Bachelor's in Computer Science|Bachelor's in Engineering,3,Technical Problem Solving|Solution Design|Communication|Customer Relations|Product Knowledge|Presentation,85-155K
+Pre-Sales Engineer,Technology,Bachelor's in Computer Science,2,Sales Engineering|Technical Knowledge|Communication|Product Demonstration|Problem Solving|Client Relations,75-140K
+Technical Account Manager,Technology,Bachelor's in Computer Science,2,Account Management|Technical Knowledge|Communication|Problem Solving|Client Relations|Product Knowledge,75-135K
+Release Manager,Technology,Bachelor's in IT,3,Release Management|Project Management|Change Control|Documentation|Communication|Problem Solving,80-145K
+IT Project Manager,Technology,Bachelor's in IT|Project Management Certification,3,Project Management|IT Knowledge|Leadership|Budget Control|Communication|Problem Solving,80-145K
+Scrum Master,Technology,Bachelor's in IT|Scrum Master Certification,2,Scrum|Agile|Coaching|Team Leadership|Problem Solving|Communication,75-140K
+Product Owner,Technology,Bachelor's in Business|Scrum Product Owner Certification,2,Product Strategy|Agile|Backlog Management|Communication|Leadership|Business Acumen,80-150K
+Academic Data Analyst,Data & Analytics,Master's in Data Science|PhD,2,Statistical Analysis|Research|Python|R|Academic Writing|Problem Solving,70-130K
+Clinical Data Manager,Healthcare,Master's in Data Management|Bachelor's in Life Sciences,2,Clinical Data|Regulatory Compliance|Database Management|Statistical Analysis|Problem Solving|Attention to Detail,70-130K
+Biomedical Engineer,Engineering & Manufacturing,Bachelor's in Biomedical Engineering,2,Biomedical Systems|Medical Devices|CAD|Problem Solving|Regulatory Knowledge|Technical Design,75-140K
+Software Test Engineer,Technology,Bachelor's in Computer Science,1,Test Automation|Manual Testing|Problem Solving|Selenium|API Testing|Documentation,55-105K
+Performance Tester,Technology,Bachelor's in IT,2,Performance Testing|Load Testing|JMeter|Analysis|Problem Solving|Reporting,70-130K
+Security Tester,Technology,Bachelor's in Cybersecurity,2,Security Testing|Vulnerability Testing|Problem Solving|Security Tools|Risk Assessment|Reporting,75-135K
+Retail Manager,Retail & Hospitality,High School|Associate in Business,3,Sales Management|Customer Service|Inventory Control|Staff Leadership|Cash Handling|Problem Solving,50-85K
+Store Manager,Retail & Hospitality,High School|Leadership,2,Store Management|Sales|Staff Management|Inventory|Customer Relations|Problem Solving,55-90K
+Visual Merchandiser,Retail & Hospitality,High School|Design Knowledge,1,Visual Design|Creativity|Lighting|Arrangement|Sales|Customer Service,40-70K
+Loss Prevention Manager,Retail & Hospitality,High School|Security Training,2,Security|Surveillance|Investigation|Problem Solving|Leadership|Communication,50-85K
+Cashier,Retail & Hospitality,High School,0,Cash Handling|Customer Service|Point of Sale|Accuracy|Communication|Friendliness,28-40K
+Sales Associate,Retail & Hospitality,High School,0,Sales|Customer Service|Product Knowledge|Communication|Problem Solving|Teamwork,30-50K
+Retail Supervisor,Retail & Hospitality,High School|Leadership,2,Supervision|Sales|Customer Service|Inventory|Staff Training|Problem Solving,45-75K
+Electrician,Skilled Trades,Trade School|Apprenticeship,3,Electrical Work|Safety|Problem Solving|Technical Knowledge|Code Knowledge|Troubleshooting,60-100K
+Plumber,Skilled Trades,Trade School|Apprenticeship,3,Plumbing Systems|Safety|Problem Solving|Technical Knowledge|Code Knowledge|Customer Service,55-95K
+Carpenter,Skilled Trades,Trade School|Apprenticeship,2,Carpentry|Safety|Technical Skills|Problem Solving|Hand Tools|Precision,50-90K
+HVAC Technician,Skilled Trades,Trade School|HVAC Certification,2,HVAC Systems|Troubleshooting|Safety|Technical Knowledge|Equipment|Problem Solving,50-90K
+Welder,Skilled Trades,Trade School|Welding Certification,1,Welding|Safety|Precision|Technical Knowledge|Problem Solving|Physical Stamina,45-80K
+Heavy Equipment Operator,Skilled Trades,High School|Equipment License,1,Equipment Operation|Safety|Problem Solving|Precision|Attention to Detail|Communication,50-85K
+CNC Machinist,Skilled Trades,Machinist Program|Trade School,2,CNC Machines|Precision|Technical Knowledge|Problem Solving|Safety|Attention to Detail,55-90K
+Mechanic,Skilled Trades,Trade School|Certification,2,Vehicle Mechanics|Troubleshooting|Problem Solving|Equipment Knowledge|Safety|Attention to Detail,50-85K
+Diesel Mechanic,Skilled Trades,Trade School|Diesel Certification,2,Diesel Engines|Troubleshooting|Technical Skills|Safety|Problem Solving|Equipment Knowledge,55-95K
+Head Chef,Hospitality & Food Service,Culinary School,5,Culinary Skills|Kitchen Management|Leadership|Recipe Development|Food Safety|Creativity,70-130K
+Sous Chef,Hospitality & Food Service,Culinary School,3,Culinary Skills|Kitchen Management|Leadership|Training|Food Safety|Creativity,55-90K
+Line Cook,Hospitality & Food Service,Culinary School|High School,1,Cooking|Food Safety|Kitchen Skills|Speed|Accuracy|Teamwork,35-55K
+Pastry Chef,Hospitality & Food Service,Culinary School|Pastry Specialization,2,Baking|Decoration|Creativity|Precision|Food Safety|Time Management,50-85K
+Bartender,Hospitality & Food Service,High School|Bartending Certification,1,Bartending|Customer Service|Communication|Memory|Team Work|Problem Solving,35-65K
+Server,Hospitality & Food Service,High School,0,Customer Service|Communication|Memory|Organization|Problem Solving|Teamwork,30-50K
+Hairstylist,Beauty & Wellness,Beauty School|License,1,Hair Styling|Customer Service|Creativity|Technical Skills|Communication|Precision,35-70K
+Makeup Artist,Beauty & Wellness,Beauty School|Makeup Certification,1,Makeup Application|Creativity|Color Theory|Communication|Technical Skills|Customer Service,40-75K
+Nail Technician,Beauty & Wellness,Beauty School|License,1,Nail Care|Artistry|Customer Service|Precision|Sanitation|Communication,35-60K
+Esthetician,Beauty & Wellness,Esthetics School|License,1,Skincare|Facial Treatment|Customer Service|Product Knowledge|Communication|Technical Skills,40-70K
+Massage Therapist,Beauty & Wellness,Massage Therapy School|License,1,Massage Therapy|Anatomy|Customer Service|Communication|Problem Solving|Empathy,45-75K
+Farmer,Agriculture,High School|Agriculture Experience,2,Farming|Equipment Operation|Problem Solving|Sustainability|Business Management|Safety,40-80K
+Farm Manager,Agriculture,Bachelor's in Agriculture|Leadership,3,Farm Management|Crop Knowledge|Equipment|Leadership|Business Acumen|Sustainability,55-100K
+Livestock Manager,Agriculture,Agriculture Program|Experience,2,Livestock Care|Health Knowledge|Equipment|Problem Solving|Leadership|Business Skills,50-90K
+Dairy Manager,Agriculture,Agriculture Program,3,Dairy Operations|Animal Health|Equipment|Quality Control|Leadership|Problem Solving,55-95K
+Park Ranger,Conservation,Bachelor's in Environmental Science,1,Conservation|Public Safety|Environmental Knowledge|Communication|Outdoor Skills|Problem Solving,40-75K
+Wildlife Biologist,Conservation,Bachelor's in Biology|Master's in Wildlife,2,Wildlife Biology|Research|Data Analysis|Field Work|Problem Solving|Communication,50-90K
+Conservation Officer,Conservation,Bachelor's in Environmental Science,1,Conservation|Law Enforcement|Environmental Knowledge|Problem Solving|Communication|Safety,45-80K
+Bus Driver,Transportation,High School|Commercial Driver's License,0,Driving|Safety|Customer Service|Route Knowledge|Problem Solving|Responsibility,40-70K
+Taxi Driver,Transportation,High School|Taxi License,0,Driving|Navigation|Customer Service|Problem Solving|Safety|Communication,35-65K
+Ship Captain,Transportation,Maritime Academy|Captain License,5,Navigation|Leadership|Maritime Law|Safety|Problem Solving|Technical Knowledge,80-150K
+Deck Officer,Transportation,Maritime Training,2,Navigation|Maritime Knowledge|Safety|Technical Skills|Leadership|Problem Solving,60-100K
+Crane Operator,Transportation,High School|Crane Certification,1,Crane Operation|Safety|Precision|Problem Solving|Communication|Attention to Detail,55-90K
+Police Officer,Law Enforcement,High School|Police Academy,1,Law Enforcement|Safety|Problem Solving|Communication|Physical Fitness|Judgment,50-85K
+Security Guard,Law Enforcement,High School|Security Training,0,Security|Awareness|Communication|Problem Solving|Safety|Responsibility,30-55K
+Firefighter,Law Enforcement,High School|Fire Academy,1,Fire Fighting|Safety|Physical Fitness|Problem Solving|Teamwork|Quick Thinking,50-90K
+Military Officer,Law Enforcement,Military Academy|Bachelor's Degree,3,Leadership|Strategic Planning|Safety|Communication|Problem Solving|Discipline,60-120K
+Detective,Law Enforcement,Police Academy|Experience,3,Investigation|Analysis|Problem Solving|Communication|Attention to Detail|Judgment,65-110K
+Geologist,Science & Research,Bachelor's in Geology,2,Geology|Field Work|Analysis|Research|Problem Solving|Technical Knowledge,60-110K
+Meteorologist,Science & Research,Bachelor's in Meteorology,1,Meteorology|Weather Analysis|Research|Data Analysis|Problem Solving|Communication,55-100K
+Microbiologist,Science & Research,Master's in Microbiology,2,Microbiology|Laboratory Work|Research|Data Analysis|Problem Solving|Precision,65-120K
+Botanist,Science & Research,Bachelor's in Botany|Master's preferred,2,Plant Science|Field Work|Research|Data Analysis|Problem Solving|Communication,60-110K
+News Anchor,Media & Entertainment,Bachelor's in Journalism|Broadcasting,2,Communication|Presentation|Writing|Research|Critical Thinking|On-Camera Skills,60-150K
+Radio Host,Media & Entertainment,Broadcasting School,1,Public Speaking|Communication|Improvisation|Interviewing|Problem Solving|Personality,40-100K
+Sports Commentator,Media & Entertainment,Journalism|Broadcasting,2,Sports Knowledge|Public Speaking|Communication|Enthusiasm|Quick Thinking|Writing,50-120K
+Announcer,Media & Entertainment,High School|Broadcasting,1,Public Speaking|Voice Skills|Pronunciation|Communication|Professionalism|Quick Thinking,40-80K
+Athlete,Sports & Athletics,High School|University,1,Athletic Ability|Training Discipline|Teamwork|Mental Toughness|Performance|Fitness,40-500K
+Sports Agent,Sports & Athletics,Bachelor's in Business|Law,2,Sales|Negotiation|Sports Knowledge|Communication|Business Acumen|Networking,60-150K
+Athletic Trainer,Sports & Athletics,Bachelor's in Athletic Training,1,Athletic Training|First Aid|Sports Knowledge|Communication|Problem Solving|Empathy,45-85K
+Librarian,Information Services,Master's in Library Science,1,Information Management|Research|Organization|Communication|Customer Service|Technology,55-100K
+Archivist,Information Services,Master's in Archival Science,2,Archives Management|Organization|Preservation|Research|Documentation|Problem Solving,50-90K
+Museum Curator,Arts & Culture,Master's in Art History|Museum Studies,3,Curation|Art Knowledge|Research|Communication|Problem Solving|Management,55-100K
+Conservator,Arts & Culture,Master's in Conservation,2,Conservation|Restoration|Technical Skills|Precision|Research|Problem Solving,55-100K
+Exhibition Designer,Arts & Culture,Bachelor's in Design|Museum Studies,2,Exhibition Design|Creativity|Technical Skills|Communication|Problem Solving|Project Management,50-90K
+Veterinarian,Veterinary,Doctor of Veterinary Medicine,1,Veterinary Medicine|Animal Care|Diagnosis|Communication|Compassion|Problem Solving,80-150K
+Veterinary Technician,Veterinary,Associate in Veterinary Technology,1,Veterinary Care|Animal Handling|Technical Skills|Communication|Compassion|Safety,35-60K

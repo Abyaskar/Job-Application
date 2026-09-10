@@ -13,7 +13,7 @@ from pathlib import Path
 
 from app.core.logging import get_logger
 from app.models.schemas import ParsedResume, ResumeIn
-from app.repositories.repositories import CandidateRepository, JobRepository
+from app.repositories.repository import CandidateRepository, JobRepository
 from app.services.extraction import extract_resume_profile
 from app.services.recommender import rebuild_job_index
 
