@@ -1,0 +1,28 @@
+{
+  "model_version": "dataset_v2",
+  "training_timestamp": "2026-09-09T18:47:18.582778",
+  "n_training_examples": 32000,
+  "n_positive_examples": 8000,
+  "n_negative_examples": 24000,
+  "feature_names": [
+    "semantic_similarity",
+    "experience_match",
+    "education_match",
+    "domain_match",
+    "resume_experience_years",
+    "required_experience_years"
+  ],
+  "evaluation_metrics": {
+    "test_accuracy": 0.8532,
+    "test_precision": 0.6592,
+    "test_recall": 0.855,
+    "test_f1": 0.7444,
+    "test_roc_auc": 0.9311,
+    "test_ranking_candidates": 2000,
+    "test_hit_rate_at_1": 0.9,
+    "test_hit_rate_at_3": 0.9985,
+    "test_mrr": 0.9477
+  },
+  "training_dataset_source": "dataset_training_examples_contrastive_negatives.csv",
+  "model_type": "LogisticRegression"
+}

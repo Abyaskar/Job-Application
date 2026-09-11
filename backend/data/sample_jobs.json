@@ -1,0 +1,98 @@
+[
+  {
+    "job_id": "job_001",
+    "title": "Machine Learning Engineer, Recommendations",
+    "company": "Northwind Retail",
+    "location": "Remote",
+    "domain": "e-commerce",
+    "raw_description": "We are hiring a Machine Learning Engineer to build our next-generation product recommendation system. Required: 3+ years experience, strong Python, experience with recommendation systems, machine learning, and vector search / embeddings. You should be comfortable with FastAPI and building async REST APIs, plus experience with MongoDB or another NoSQL database. Bachelor's degree in Computer Science or related field required. Nice to have: experience with Redis caching, Docker, and GCP. Experience with RAG or LLM-based systems is a bonus."
+  },
+  {
+    "job_id": "job_002",
+    "title": "Data Scientist Intern",
+    "company": "Aurora Health Analytics",
+    "location": "London",
+    "domain": "healthtech",
+    "raw_description": "Aurora Health Analytics is looking for a Data Science Intern for a 6 month internship. Required skills: Python, pandas, numpy, statistics, and basic machine learning. Familiarity with SQL is a plus. This is an entry-level / internship role suited to Master's students in Data Science or a related quantitative field. No prior industry experience required. Nice to have: experience with data visualization tools like Tableau or Power BI, and exposure to deep learning frameworks such as PyTorch or TensorFlow."
+  },
+  {
+    "job_id": "job_003",
+    "title": "Senior Backend Engineer, Search Infrastructure",
+    "company": "Lighthouse Cloud",
+    "location": "Berlin",
+    "domain": "infrastructure",
+    "raw_description": "Lighthouse Cloud is hiring a Senior Backend Engineer for our search infrastructure team. Minimum of 5 years experience required. Must have deep expertise in distributed systems, system design, microservices, and building high-throughput REST APIs. Strong experience with Kafka, Redis, and either MongoDB or a similar NoSQL database is required. Experience with vector search and semantic search is highly preferred. Candidates should hold a Master's degree in Computer Science or equivalent experience. Experience with Docker, Kubernetes, and GCP or AWS is expected."
+  },
+  {
+    "job_id": "job_004",
+    "title": "AI Engineer - Generative AI Platform",
+    "company": "Fable Labs",
+    "location": "Remote",
+    "domain": "ai_platform",
+    "raw_description": "Fable Labs is building a generative AI platform and is looking for an AI Engineer. Required: 2+ years of experience with large language models (LLMs), retrieval augmented generation (RAG), and prompt engineering. Strong Python skills required, along with experience building async APIs with FastAPI. Experience with vector search / embeddings and MongoDB is required. Bachelor's degree required, Master's preferred. Nice to have: experience with LangChain-style RAG pipelines, evaluation of LLM groundedness/hallucination, and GCP Vertex AI."
+  },
+  {
+    "job_id": "job_005",
+    "title": "Junior Frontend Engineer",
+    "company": "Northwind Retail",
+    "location": "New York",
+    "domain": "e-commerce",
+    "raw_description": "Junior Frontend Engineer role for a graduate or early-career developer. Required: JavaScript, TypeScript, React, and Next.js. Some understanding of REST APIs is expected. 0-2 years of experience is fine, this is an entry level position. Bachelor's degree preferred but not required. Nice to have: Tailwind CSS, testing experience, and basic Git/CI-CD familiarity."
+  },
+  {
+    "job_id": "job_006",
+    "title": "Data Engineer",
+    "company": "Meridian Logistics",
+    "location": "Singapore",
+    "domain": "logistics",
+    "raw_description": "Meridian Logistics is hiring a Data Engineer with a minimum of 4 years experience. Required: Python, SQL, Apache Spark, Apache Airflow, and Kafka for building scalable data pipelines. Experience with cloud platforms (AWS or GCP) is required. Bachelor's degree in Computer Science, Engineering or related field required. Nice to have: experience with MongoDB, Docker, and Kubernetes. Experience with recommendation systems is not required for this role."
+  },
+  {
+    "job_id": "job_007",
+    "title": "Applied Scientist - NLP",
+    "company": "Cobalt Research",
+    "location": "Remote",
+    "domain": "ai_research",
+    "raw_description": "Cobalt Research is looking for an Applied Scientist focused on Natural Language Processing (NLP). Required: PhD or Master's degree in Computer Science, Computational Linguistics, or a related field, with a minimum of 3 years of research or applied experience in NLP and deep learning. Strong Python and PyTorch or TensorFlow experience required. Experience with large language models (LLMs), embeddings, and semantic search is required. Nice to have: experience with retrieval augmented generation (RAG), statistics, and hypothesis testing."
+  },
+  {
+    "job_id": "job_008",
+    "title": "Software Engineering Intern - Platform",
+    "company": "Lighthouse Cloud",
+    "location": "Berlin",
+    "domain": "infrastructure",
+    "raw_description": "Summer internship for a Software Engineering Intern on our platform team. This role is intended for undergraduate or Master's students. No prior professional experience is required. Required: Python or Java, understanding of REST APIs, and basic Git/version control. Nice to have: exposure to Docker, async programming, and any cloud platform (GCP, AWS, or Azure). We value curiosity and a willingness to learn distributed systems fundamentals."
+  },
+  {
+    "job_id": "job_009",
+    "title": "Full-Stack Engineer, AI Products",
+    "company": "Fable Labs",
+    "location": "Remote",
+    "domain": "ai_platform",
+    "raw_description": "Full-Stack Engineer to build user-facing features for our AI product suite. Required: 2+ years experience with React or Next.js on the frontend, and Python/FastAPI on the backend. Experience with MongoDB and Redis required. Experience integrating with LLM or generative AI APIs is a strong plus. Bachelor's degree preferred. Nice to have: Docker, GCP, and experience with vector databases or semantic search."
+  },
+  {
+    "job_id": "job_010",
+    "title": "Data Analyst",
+    "company": "Aurora Health Analytics",
+    "location": "London",
+    "domain": "healthtech",
+    "raw_description": "Data Analyst role focused on healthcare operations reporting. Required: SQL, Excel, and basic Python for data analysis. Experience with statistics and data visualization (Tableau or Power BI) preferred. 1-3 years of experience or a strong internship background is acceptable. Bachelor's degree required. Machine learning experience is not required for this role but is a plus."
+  },
+  {
+    "job_id": "job_011",
+    "title": "MLOps Engineer",
+    "company": "Meridian Logistics",
+    "location": "Singapore",
+    "domain": "logistics",
+    "raw_description": "MLOps Engineer needed to productionize machine learning models. Minimum 3 years experience required. Required: Docker, Kubernetes, CI/CD, Python, and experience deploying models on GCP or AWS. Experience with MongoDB or another database for feature/metadata storage required. Bachelor's degree in Computer Science or related required. Nice to have: experience with recommendation systems, vector search, and monitoring/observability tooling."
+  },
+  {
+    "job_id": "job_012",
+    "title": "Graduate Software Engineer - Search & Ranking",
+    "company": "Northwind Retail",
+    "location": "Remote",
+    "domain": "e-commerce",
+    "raw_description": "Graduate Software Engineer position on our Search & Ranking team, ideal for recent MSc graduates in Computer Science or Data Science. Required: Python, understanding of machine learning fundamentals, and REST API development. Experience with FastAPI, MongoDB, or Redis is a strong plus but not mandatory for graduate applicants. Familiarity with recommendation systems, vector search, or semantic search through coursework or projects is highly valued. Bachelor's degree required, Master's preferred."
+  }
+]

@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-base-950 text-base-100 antialiased;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(109, 94, 248, 0.18), transparent);
+    background-repeat: no-repeat;
+  }
+  ::selection {
+    @apply bg-accent/40 text-white;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-base-900/60 border border-base-700/60 backdrop-blur-xl;
+  }
+  .card {
+    @apply glass-panel rounded-2xl shadow-card;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-2.5 text-sm font-medium text-white
+      transition-all hover:bg-accent-light hover:shadow-glow active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-base-600 bg-base-850 px-4 py-2.5 text-sm font-medium text-base-100
+      transition-all hover:border-base-500 hover:bg-base-800 active:scale-[0.98];
+  }
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium;
+  }
+  .kbd {
+    @apply rounded-md border border-base-600 bg-base-800 px-1.5 py-0.5 text-[11px] font-mono text-base-300;
+  }
+  .skeleton {
+    @apply relative overflow-hidden bg-base-800 before:absolute before:inset-0 before:-translate-x-full
+      before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-base-700/60 before:to-transparent;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #333847;
+  border-radius: 6px;
+}

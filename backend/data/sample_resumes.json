@@ -1,0 +1,50 @@
+[
+  {
+    "candidate_id": "cand_msc_ds_01",
+    "preferred_locations": ["Remote", "London"],
+    "preferred_domains": ["ai_platform", "e-commerce"],
+    "raw_text": "MSc Data Science graduate with 1.5 years of combined internship and academic project experience. Built a recommendation system for an e-commerce dataset using collaborative filtering and vector search over product embeddings, deployed as a FastAPI async REST API backed by MongoDB and Redis caching. Strong Python skills including pandas, numpy, and scikit-learn. Coursework and personal projects covering machine learning, deep learning with PyTorch, and natural language processing. Built a retrieval augmented generation (RAG) prototype over a document corpus for a university capstone project, including embeddings and semantic search. Comfortable with Docker for containerization and basic Git/CI-CD workflows. Bachelor's degree in Computer Science, Master's degree (MSc) in Data Science in progress/completed. Familiar with system design fundamentals and REST API design. Some exposure to GCP through university cloud credits."
+  },
+  {
+    "candidate_id": "cand_frontend_01",
+    "preferred_locations": ["New York", "Remote"],
+    "preferred_domains": ["e-commerce"],
+    "raw_text": "Frontend developer with 1 year of experience building React and Next.js applications with TypeScript and Tailwind CSS. Built several personal projects consuming REST APIs. Familiar with Git and basic CI/CD pipelines. Bachelor's degree in Computer Science. Limited backend experience; some exposure to Node.js. No formal experience with machine learning, Python, or databases like MongoDB."
+  },
+  {
+    "candidate_id": "cand_senior_backend_01",
+    "preferred_locations": ["Berlin", "Remote"],
+    "preferred_domains": ["infrastructure", "ai_platform"],
+    "raw_text": "Senior backend engineer with 6 years of professional experience building distributed systems and microservices. Deep expertise in system design, Kafka, Redis, and MongoDB at scale, handling millions of requests per day. Experience building high-throughput REST APIs in Python and Java. Led migration of a monolith to microservices deployed on GCP using Docker and Kubernetes. Some exposure to vector search and semantic search from a recent internal project. Master's degree in Computer Science. Comfortable mentoring junior engineers and leading system design reviews."
+  },
+  {
+    "candidate_id": "cand_nlp_researcher_01",
+    "preferred_locations": ["Remote"],
+    "preferred_domains": ["ai_research", "ai_platform"],
+    "raw_text": "PhD candidate in Computational Linguistics with 4 years of applied NLP research experience. Extensive experience with PyTorch, TensorFlow, and large language models (LLMs), including fine-tuning transformer architectures for downstream NLP tasks. Published research involving embeddings, semantic search, and retrieval augmented generation (RAG) pipelines. Strong Python skills and experience with statistics and hypothesis testing. Limited experience with production software engineering practices such as Docker, MongoDB, or REST API deployment, though comfortable learning quickly."
+  },
+  {
+    "candidate_id": "cand_data_analyst_01",
+    "preferred_locations": ["London"],
+    "preferred_domains": ["healthtech"],
+    "raw_text": "Data analyst with 2 years of experience in healthcare reporting. Strong SQL skills and experience building dashboards in Tableau and Power BI. Working knowledge of Python for basic data analysis with pandas. Some exposure to statistics coursework. No experience with machine learning frameworks, MongoDB, or software engineering practices such as REST APIs or Docker. Bachelor's degree in Public Health with a minor in Statistics."
+  },
+  {
+    "candidate_id": "cand_new_grad_01",
+    "preferred_locations": ["Remote", "Singapore"],
+    "preferred_domains": ["e-commerce", "infrastructure"],
+    "raw_text": "Recent Bachelor's graduate in Computer Science with strong academic performance and two internships totaling 8 months of experience. Internship experience includes building REST APIs with Python and basic exposure to FastAPI and MongoDB during a capstone project. Coursework covered machine learning fundamentals, algorithms, and system design basics. Built a small recommendation engine project using simple vector similarity for a class assignment. Comfortable with Git and eager to grow into a backend or ML engineering role. No professional experience with Docker, Kubernetes, or cloud platforms yet, though completed an introductory GCP course."
+  },
+  {
+    "candidate_id": "cand_pivot_analyst_01",
+    "preferred_locations": ["Remote"],
+    "preferred_domains": ["ai_platform", "healthtech"],
+    "raw_text": "Data analyst with 2 years of experience in healthcare reporting. Strong SQL skills and experience building dashboards in Tableau and Power BI. Working knowledge of Python for basic data analysis with pandas. Actively studying generative AI technologies on the side and aiming to transition into an AI engineering career path. Bachelor's degree in Statistics."
+  },
+  {
+    "candidate_id": "cand_accountant_ashutosh",
+    "preferred_locations": ["Mumbai", "Remote"],
+    "preferred_domains": ["finance", "accounting"],
+    "raw_text": "Ashutosh Dhanajirao Renushe - Accountant | Accounts & GST. B.Com (Bachelor of Commerce) from Prahladrai Dalmia Lions College, 2026. Experience: Accountant at Ramesh Kundar, CA Firm (July 2025 – June 2026). Skills: Bookkeeping, day-to-day accounting, Tally Prime, GST compliance (GSTR-1, GSTR-3B, GSTR-2B reconciliation), GST registration support, E-way bills, E-invoices, Bank audit support, Bank statement verification, Voucher verification, Reconciliation, Cash-related records, Interest calculations, Audit working papers, Excel-based accounting (Filters, Sorting, SUM/SUMIF, COUNTIF, VLOOKUP/XLOOKUP, Pivot Tables, Conditional formatting), Basic data cleaning, Documentation and reporting. Core competencies: Accounting & Bookkeeping, Tally Prime, Tally, GST Compliance, GST Registration Support, E-Way Bill, E-Invoice, Bank Audit Support, Bank Reconciliation, Voucher Verification, Ledger & Record Maintenance, MS Excel, Pivot Tables, SUMIF/COUNTIF, VLOOKUP/XLOOKUP, Conditional Formatting, Data Cleaning, Documentation & Reporting."
+  }
+]

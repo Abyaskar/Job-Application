@@ -1,0 +1,464 @@
+{
+  "agile": {
+    "aliases": [
+      "agile",
+      "scrum",
+      "kanban"
+    ],
+    "category": "process"
+  },
+  "airflow": {
+    "aliases": [
+      "airflow",
+      "apache airflow"
+    ],
+    "category": "data_eng"
+  },
+  "async_programming": {
+    "aliases": [
+      "async",
+      "asyncio",
+      "asynchronous programming"
+    ],
+    "category": "engineering"
+  },
+  "aws": {
+    "aliases": [
+      "aws",
+      "amazon web services"
+    ],
+    "category": "cloud"
+  },
+  "azure": {
+    "aliases": [
+      "azure",
+      "microsoft azure"
+    ],
+    "category": "cloud"
+  },
+  "accounting": {
+    "aliases": [
+      "accounting",
+      "accounts",
+      "bookkeeping",
+      "general ledger"
+    ],
+    "category": "finance"
+  },
+  "gst_compliance": {
+    "aliases": [
+      "gst",
+      "gst compliance",
+      "gst returns",
+      "gstr-1",
+      "gstr-3b",
+      "gstr-2b",
+      "gst registration",
+      "e-way bill",
+      "e-invoice"
+    ],
+    "category": "finance"
+  },
+  "tally": {
+    "aliases": [
+      "tally",
+      "tally prime",
+      "tally erp"
+    ],
+    "category": "finance_tool"
+  },
+  "bank_reconciliation": {
+    "aliases": [
+      "bank reconciliation",
+      "bank audit",
+      "bank statement verification",
+      "reconciliation"
+    ],
+    "category": "finance"
+  },
+  "voucher_verification": {
+    "aliases": [
+      "voucher verification",
+      "voucher entry",
+      "journal entries"
+    ],
+    "category": "finance"
+  },
+  "ledger_management": {
+    "aliases": [
+      "ledger",
+      "ledger maintenance",
+      "accounts receivable",
+      "accounts payable"
+    ],
+    "category": "finance"
+  },
+  "audit_support": {
+    "aliases": [
+      "audit support",
+      "audit working papers",
+      "statutory audit",
+      "tax audit"
+    ],
+    "category": "finance"
+  },
+  "business_analysis": {
+    "aliases": [
+      "business analysis",
+      "business analyst",
+      "requirements analysis"
+    ],
+    "category": "business"
+  },
+  "ci_cd": {
+    "aliases": [
+      "ci/cd",
+      "continuous integration",
+      "continuous deployment"
+    ],
+    "category": "devops"
+  },
+  "data_visualization": {
+    "aliases": [
+      "data visualization",
+      "tableau",
+      "power bi"
+    ],
+    "category": "data"
+  },
+  "deep_learning": {
+    "aliases": [
+      "deep learning",
+      "dl",
+      "neural networks"
+    ],
+    "category": "ai"
+  },
+  "django": {
+    "aliases": [
+      "django"
+    ],
+    "category": "framework"
+  },
+  "docker": {
+    "aliases": [
+      "docker",
+      "containerization"
+    ],
+    "category": "devops"
+  },
+  "excel": {
+    "aliases": [
+      "excel",
+      "microsoft excel",
+      "spreadsheets"
+    ],
+    "category": "data_tool"
+  },
+  "fastapi": {
+    "aliases": [
+      "fastapi"
+    ],
+    "category": "framework"
+  },
+  "flask": {
+    "aliases": [
+      "flask"
+    ],
+    "category": "framework"
+  },
+  "gcp": {
+    "aliases": [
+      "gcp",
+      "google cloud",
+      "google cloud platform"
+    ],
+    "category": "cloud"
+  },
+  "git": {
+    "aliases": [
+      "git",
+      "version control"
+    ],
+    "category": "tooling"
+  },
+  "graphql": {
+    "aliases": [
+      "graphql"
+    ],
+    "category": "engineering"
+  },
+  "huggingface": {
+    "aliases": [
+      "hugging face",
+      "huggingface"
+    ],
+    "category": "ai_framework"
+  },
+  "java": {
+    "aliases": [
+      "java"
+    ],
+    "category": "language"
+  },
+  "javascript": {
+    "aliases": [
+      "javascript",
+      "js"
+    ],
+    "category": "language"
+  },
+  "jira": {
+    "aliases": [
+      "jira"
+    ],
+    "category": "tooling"
+  },
+  "kafka": {
+    "aliases": [
+      "kafka",
+      "apache kafka"
+    ],
+    "category": "data_eng"
+  },
+  "kubernetes": {
+    "aliases": [
+      "kubernetes",
+      "k8s"
+    ],
+    "category": "devops"
+  },
+  "langchain": {
+    "aliases": [
+      "langchain"
+    ],
+    "category": "ai_framework"
+  },
+  "llm": {
+    "aliases": [
+      "llm",
+      "large language models",
+      "generative ai",
+      "genai"
+    ],
+    "category": "ai"
+  },
+  "machine_learning": {
+    "aliases": [
+      "machine learning",
+      "ml"
+    ],
+    "category": "ai"
+  },
+  "microservices": {
+    "aliases": [
+      "microservices",
+      "microservice architecture"
+    ],
+    "category": "engineering"
+  },
+  "mlops": {
+    "aliases": [
+      "mlops",
+      "ml ops",
+      "ml infrastructure"
+    ],
+    "category": "ai"
+  },
+  "mongodb": {
+    "aliases": [
+      "mongodb",
+      "mongo"
+    ],
+    "category": "database"
+  },
+  "nextjs": {
+    "aliases": [
+      "next.js",
+      "nextjs"
+    ],
+    "category": "framework"
+  },
+  "nlp": {
+    "aliases": [
+      "nlp",
+      "natural language processing"
+    ],
+    "category": "ai"
+  },
+  "node": {
+    "aliases": [
+      "node.js",
+      "nodejs",
+      "node"
+    ],
+    "category": "framework"
+  },
+  "nosql": {
+    "aliases": [
+      "nosql",
+      "dynamodb"
+    ],
+    "category": "data"
+  },
+  "numpy": {
+    "aliases": [
+      "numpy"
+    ],
+    "category": "data_tool"
+  },
+  "pandas": {
+    "aliases": [
+      "pandas"
+    ],
+    "category": "data_tool"
+  },
+  "prompt_engineering": {
+    "aliases": [
+      "prompt engineering",
+      "prompt design"
+    ],
+    "category": "ai"
+  },
+  "python": {
+    "aliases": [
+      "python",
+      "py3"
+    ],
+    "category": "language"
+  },
+  "pytorch": {
+    "aliases": [
+      "pytorch",
+      "torch"
+    ],
+    "category": "ai_framework"
+  },
+  "rag": {
+    "aliases": [
+      "rag",
+      "retrieval augmented generation",
+      "retrieval-augmented generation"
+    ],
+    "category": "ai"
+  },
+  "react": {
+    "aliases": [
+      "react",
+      "reactjs",
+      "react.js"
+    ],
+    "category": "framework"
+  },
+  "recommendation_systems": {
+    "aliases": [
+      "recommendation systems",
+      "recommender systems"
+    ],
+    "category": "ai"
+  },
+  "redis": {
+    "aliases": [
+      "redis"
+    ],
+    "category": "database"
+  },
+  "requirements_gathering": {
+    "aliases": [
+      "requirements gathering",
+      "requirements elicitation"
+    ],
+    "category": "business"
+  },
+  "rest_api": {
+    "aliases": [
+      "rest api",
+      "restful api",
+      "rest"
+    ],
+    "category": "engineering"
+  },
+  "scikit_learn": {
+    "aliases": [
+      "scikit-learn",
+      "sklearn"
+    ],
+    "category": "ai_framework"
+  },
+  "spark": {
+    "aliases": [
+      "spark",
+      "apache spark",
+      "pyspark"
+    ],
+    "category": "data_eng"
+  },
+  "sql": {
+    "aliases": [
+      "sql",
+      "postgresql",
+      "mysql"
+    ],
+    "category": "data"
+  },
+  "stakeholder_management": {
+    "aliases": [
+      "stakeholder management",
+      "stakeholder engagement"
+    ],
+    "category": "business"
+  },
+  "statistics": {
+    "aliases": [
+      "statistics",
+      "statistical analysis",
+      "hypothesis testing"
+    ],
+    "category": "data_science"
+  },
+  "system_design": {
+    "aliases": [
+      "system design",
+      "distributed systems"
+    ],
+    "category": "engineering"
+  },
+  "tensorflow": {
+    "aliases": [
+      "tensorflow",
+      "tf"
+    ],
+    "category": "ai_framework"
+  },
+  "testing": {
+    "aliases": [
+      "unit testing",
+      "pytest",
+      "test automation"
+    ],
+    "category": "engineering"
+  },
+  "transformers": {
+    "aliases": [
+      "transformer",
+      "transformers",
+      "attention mechanism"
+    ],
+    "category": "ai"
+  },
+  "typescript": {
+    "aliases": [
+      "typescript",
+      "ts"
+    ],
+    "category": "language"
+  },
+  "vector_search": {
+    "aliases": [
+      "vector search",
+      "embeddings",
+      "semantic search"
+    ],
+    "category": "ai"
+  }
+}

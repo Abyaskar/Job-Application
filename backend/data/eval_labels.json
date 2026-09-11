@@ -1,0 +1,12 @@
+{
+  "methodology": "Relevance labels were hand-authored by reading each candidate resume against each job description and marking a job as relevant if a competent human career counselor would tell the candidate to prioritize applying to it (strong skill/domain/seniority alignment) -- and, where an 'intended_role' is set, respecting that stated career intent over generic resume similarity. This is a small, manually curated set (7 candidates x 12 jobs) intended to demonstrate the evaluation methodology end-to-end, not to be a statistically robust benchmark -- see README 'Evaluation' for discussion of this limitation and how it would be scaled (e.g. real historical application outcomes, or the Kaggle 'Resume Data for Ranking' dataset via scripts/load_resume_ranking_dataset.py) in production. 'cand_pivot_analyst_01' is a deliberate intent-vs-similarity stress test: a data-analyst resume with a stated intent to move into GenAI engineering, used specifically to measure whether the Career Intent Layer correctly prioritizes the intent-aligned role over the resume's generic best textual match -- see /api/v1/evaluation/intent-impact.",
+  "cases": [
+    { "candidate_id": "cand_msc_ds_01", "intended_role": "GenAI Engineer", "relevant_job_ids": ["job_001", "job_004", "job_012"] },
+    { "candidate_id": "cand_frontend_01", "intended_role": "Frontend Engineer", "relevant_job_ids": ["job_005"] },
+    { "candidate_id": "cand_senior_backend_01", "intended_role": "Backend Engineer", "relevant_job_ids": ["job_003", "job_011"] },
+    { "candidate_id": "cand_nlp_researcher_01", "intended_role": "NLP Research Scientist", "relevant_job_ids": ["job_007", "job_004"] },
+    { "candidate_id": "cand_data_analyst_01", "intended_role": "Data Analyst", "relevant_job_ids": ["job_010"] },
+    { "candidate_id": "cand_new_grad_01", "intended_role": "Software Engineer", "relevant_job_ids": ["job_012", "job_008"] },
+    { "candidate_id": "cand_pivot_analyst_01", "intended_role": "GenAI Engineer", "relevant_job_ids": ["job_004"] }
+  ]
+}
